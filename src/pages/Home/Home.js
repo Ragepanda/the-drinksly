@@ -1,68 +1,62 @@
 import React from "react";
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
-// import './Home.css';
+import './Home.css';
 class Home extends React.Component {
 
     render() {
         return (
             <div id="extra">
-                <div class="container">
-                    <div class="row no-collapse-1">
-                        <section class="4u">
-                            <a href="#" class="image featured">
-                                <img src="images/pic01.jpg" alt="" />
+                <div className="container">
+                    <div className="row no-collapse-1">
+                        <section className="4u">
+                            <a href="#" className="image featured">
+                                <img src="images/alcoholic_drinks/gin_drinks/nils9three.jpg" alt="gin drinks" />
                             </a>
-                            <div class="box">
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum wisi maecenas ligula.</p>
-                                <a href="#" class="button">Read More</a>
+                            <div className="box">
+                                <p>Gin Drinks</p>
                             </div>
                         </section>
-                        <section class="4u">
-                            <a href="#" class="image featured">
-                                <img src="images/pic02.jpg" alt="" />
+                        <section className="4u">
+                            <a href="#" className="image featured">
+                                <img src="images/alcoholic_drinks/rum_drinks/rum-drinks.jpg" alt="rum drinks" />
                             </a>
-                            <div class="box">
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum wisi maecenas ligula.</p>
-                                <a href="#" class="button">Read More</a>
+                            <div className="box">
+                                <p>Rum Drinks</p>
                             </div>
                         </section>
-                        <section class="4u">
-                            <a href="#" class="image featured">
-                                <img src="images/pic03.jpg" alt="" />
+                        <section className="4u">
+                            <a href="#" className="image featured">
+                                <img src="images/alcoholic_drinks/scotch_drinks/scotch-drinks.jpg" alt="scotch drinks" />
                             </a>
-                            <div class="box">
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum wisi maecenas ligula.</p>
-                                <a href="#" class="button">Read More</a>
+                            <div className="box">
+                                <p>Scotch Drinks</p>
                             </div>
                         </section>
                     </div>
-                    <div class="row no-collapse-1">
-                        <section class="4u">
-                            <a href="#" class="image featured">
-                                <img src="images/pic01.jpg" alt="" />
+                    <div className="row no-collapse-1">
+                        <section className="4u">
+                            <a href="#" className="image featured">
+                                <img src="images/alcoholic_drinks/tequila_drinks/tequila-drinks.jpg" alt="tequila drinks" />
                             </a>
-                            <div class="box">
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum wisi maecenas ligula.</p>
-                                <a href="#" class="button">Read More</a>
+                            <div className="box">
+                                <p>Tequila Drinks</p>
                             </div>
                         </section>
-                        <section class="4u">
-                            <a href="#" class="image featured">
-                                <img src="images/pic02.jpg" alt="" />
+                        <section className="4u">
+                            <a href="#" className="image featured">
+                                <img src="images/alcoholic_drinks/vodka_drinks/vodka-drinks.jpg" alt="vodka drinks" />
                             </a>
-                            <div class="box">
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum wisi maecenas ligula.</p>
-                                <a href="#" class="button">Read More</a>
+                            <div className="box">
+                                <p>Vodka Drinks</p>
                             </div>
                         </section>
-                        <section class="4u">
-                            <a href="#" class="image featured">
-                                <img src="images/pic03.jpg" alt="" />
+                        <section className="4u">
+                            <a href="#" className="image featured">
+                                <img src="images/alcoholic_drinks/whiskey_drinks/whiskey-drinks.jpg" alt="vodka drinks" />
                             </a>
-                            <div class="box">
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum wisi maecenas ligula.</p>
-                                <a href="#" class="button">Read More</a>
+                            <div className="box">
+                                <p>Whiskey Drinks</p>
                             </div>
                         </section>
                     </div>
