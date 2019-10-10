@@ -7,11 +7,10 @@ class Home extends React.Component {
     render() {
         return (
             <div id="extra">
-<<<<<<< HEAD
                 <div className="container">
                     <div className="row no-collapse-1">
                         <section className="4u">
-                            <a href="#" className="image featured">
+                            <a href="/drinks/example" className="image featured">
                                 <img src="images/alcoholic_drinks/gin_drinks/nils9three.jpg" alt="gin drinks" />
                             </a>
                             <div className="box">
@@ -19,7 +18,7 @@ class Home extends React.Component {
                             </div>
                         </section>
                         <section className="4u">
-                            <a href="#" className="image featured">
+                            <a href="/drinks/example" className="image featured">
                                 <img src="images/alcoholic_drinks/rum_drinks/rum-drinks.jpg" alt="rum drinks" />
                             </a>
                             <div className="box">
@@ -27,7 +26,7 @@ class Home extends React.Component {
                             </div>
                         </section>
                         <section className="4u">
-                            <a href="#" className="image featured">
+                            <a href="/drinks/example" className="image featured">
                                 <img src="images/alcoholic_drinks/scotch_drinks/scotch-drinks.jpg" alt="scotch drinks" />
                             </a>
                             <div className="box">
@@ -37,7 +36,7 @@ class Home extends React.Component {
                     </div>
                     <div className="row no-collapse-1">
                         <section className="4u">
-                            <a href="#" className="image featured">
+                            <a href="/drinks/example" className="image featured">
                                 <img src="images/alcoholic_drinks/tequila_drinks/tequila-drinks.jpg" alt="tequila drinks" />
                             </a>
                             <div className="box">
@@ -45,7 +44,7 @@ class Home extends React.Component {
                             </div>
                         </section>
                         <section className="4u">
-                            <a href="#" className="image featured">
+                            <a href="/drinks/example" className="image featured">
                                 <img src="images/alcoholic_drinks/vodka_drinks/vodka-drinks.jpg" alt="vodka drinks" />
                             </a>
                             <div className="box">
@@ -53,7 +52,7 @@ class Home extends React.Component {
                             </div>
                         </section>
                         <section className="4u">
-                            <a href="#" className="image featured">
+                            <a href="/drinks/example" className="image featured">
                                 <img src="images/alcoholic_drinks/whiskey_drinks/whiskey-drinks.jpg" alt="vodka drinks" />
                             </a>
                             <div className="box">
