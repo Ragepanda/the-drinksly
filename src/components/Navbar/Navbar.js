@@ -13,9 +13,9 @@ class Navbar extends React.Component {
                 <nav id="nav">
                     <ul>
                         <li class="active"><NavLink className="nav-link" to="/">Home</NavLink></li>
-                        <li><NavLink className="nav-link" to="/">Non-Alcoholic Drinks</NavLink></li>
-                        <li><NavLink className="nav-link" to="/">Drink Recipes</NavLink></li>
-                        <li><NavLink className="nav-link" to="/">Search</NavLink></li>
+                        <li><NavLink className="nav-link" to="/Non-Alcoholic">Non-Alcoholic Drinks</NavLink></li>
+                        <li><NavLink className="nav-link" to="/Drinks">Drink Recipes</NavLink></li>
+                        <li><NavLink className="nav-link" to="/Search">Search</NavLink></li>
                     </ul>
                 </nav>
             </div>

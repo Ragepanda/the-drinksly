@@ -12,6 +12,9 @@ import {
 import Navbar from "./components/Navbar/Navbar";
 
 import Home from "./pages/Home/Home";
+import Category from "./pages/Category/Category";
+import Drink from "./pages/Drink/Drink";
+import Subcategory from "./pages/Subcategory/Subcategory";
 
 
 function App() {
@@ -25,6 +28,20 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+
+          <Route exact path="/:category">
+            <Category />
+          </Route>
+
+          <Route exact path="/drinks/:drink">
+            <Drink />
+          </Route>
+
+          <Route exact path="/:category/:subcategory">
+            <Subcategory />
+          </Route>
+
+
 
 
         </Switch>
