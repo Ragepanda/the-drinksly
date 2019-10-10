@@ -7,6 +7,7 @@ class Home extends React.Component {
     render() {
         return (
             <div id="extra">
+<<<<<<< HEAD
                 <div className="container">
                     <div className="row no-collapse-1">
                         <section className="4u">
