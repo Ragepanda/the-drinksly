@@ -3,6 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 import './Home.css';
 class Home extends React.Component {
+    constructor(props) {
+        super(props); // ✅ We passed props
+        console.log(props);      // ✅ {}
+        console.log(this.props); // ✅ {}
+      }
 
     render() {
         return (

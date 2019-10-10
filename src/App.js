@@ -17,37 +17,32 @@ import Drink from "./pages/Drink/Drink";
 import Subcategory from "./pages/Subcategory/Subcategory";
 
 
-function App() {
-  return (
-    <Router>
-      <div className="App wrapper style1">
+class App extends React.Component {
+  constructor(props) {
+    super(props); // ✅ We passed props
+    console.log(props);      // ✅ {}
+    console.log(this.props); // ✅ {}
+  }
+  render() {
+    return (
+      <Router>
+        <div className="App wrapper style1">
 
-        <Navbar />
+          <Navbar />
 
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
+          <Switch>
+            <Route exact path="/" component={Home}/>
 
-          <Route exact path="/:category">
-            <Category />
-          </Route>
+            <Route exact path="/:category" component={Category}/>
+             
+            <Route exact path="/drinks/:drink" component={Drink}/>           
 
-          <Route exact path="/drinks/:drink">
-            <Drink />
-          </Route>
-
-          <Route exact path="/:category/:subcategory">
-            <Subcategory />
-          </Route>
-
-
-
-
-        </Switch>
-      </div>
-    </Router>
-  );
+            <Route exact path="/:category/:subcategory" component={Subcategory}/>    
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

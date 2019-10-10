@@ -3,6 +3,11 @@ import { NavLink } from 'react-router-dom'
 
 // import './NavBar.css';
 class Navbar extends React.Component {
+    constructor(props) {
+        super(props); // ✅ We passed props
+        console.log(props);      // ✅ {}
+        console.log(this.props); // ✅ {}
+      }
 
     render() {
         return (
