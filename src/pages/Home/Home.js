@@ -11,7 +11,7 @@ class Home extends React.Component {
                     <div className="row no-collapse-1">
                         <section className="4u">
                             <a href="/drinks/example" className="image featured">
-                                <img src="images/alcoholic_drinks/gin_drinks/nils9three.jpg" alt="gin drinks" />
+                                <img src="images/alcoholic_drinks/gin_drinks/gin-drinks.jpg" alt="gin drinks" />
                             </a>
                             <div className="box">
                                 <p>Gin Drinks</p>
