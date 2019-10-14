@@ -11,7 +11,7 @@ class Subcategory extends React.Component {
     render() {
         return (
            <div>
-               <p> This is the subcategory page Category:{this.props.match.params.category} Sub: {this.props.match.params.subcategory} </p>
+               <p> This is the subcategory page Category:{this.props.match.params.category} Subcategory: {this.props.match.params.subcategory} </p>
            </div>
         );
     }
