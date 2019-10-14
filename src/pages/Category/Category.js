@@ -15,7 +15,15 @@ class Category extends React.Component {
 
     createTable = () => {
 
-        const drinks = ["gin", "rum", "vodka", "whiskey", "tequila", "scotch"]
+        const drinks = ["Gin", "Rum", "Scotch", "Tequila", "Vodka", "Whiskey"]
+        const types  = ["Blended", "Classic","Hot", "Holiday", "Novelty", "Shots"]
+
+        const drinkRoute = ["Drinks", "Drinks", "Drinks", "Drinks" ,"Drinks", "Drinks"]
+        const typeRoute = ["Cocktails", "Cocktails" ,"Cocktails", "Cocktails", "Cocktails", ""]
+
+        let descrip = this.props.match.params.category == "spirits" ? drinkRoute : typeRoute;
+        let fillData = this.props.match.params.category == "spirits" ? drinks : types;
+
 
         let table = []
 
@@ -25,7 +33,7 @@ class Category extends React.Component {
             let children = []
         //Inner loop to create children
         for (let j = 0; j < 3; j++) {
-            children.push(<div className="4u"><a href={"/spirits/"+drinks[ctr]} className="image featured"><img src={"images/alcoholic_drinks/"+drinks[ctr]+"_drinks/"+drinks[ctr]+"-drinks.jpg"} alt={drinks[ctr]+" drinks"} /></a><div className="box"><p>{drinks[ctr]} drinks</p></div></div>)
+            children.push(<div className="4u"><a href={"/"+this.props.match.params.category+"/"+fillData[ctr]} className="image featured"><img src={"images/alcoholic_drinks/"+fillData[ctr]+"_"+descrip[ctr]+"/"+fillData[ctr]+"-"+descrip[ctr]+".jpg"} alt={fillData[ctr]+" " +descrip[ctr]} /></a><div className="box"><p>{fillData[ctr]} {descrip[ctr]}</p></div></div>)
             ctr++;
         }
             //Create the parent and add the children
