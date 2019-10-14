@@ -1,6 +1,6 @@
 import React from "react";
 
-// import './Subcategory.css';
+import './Category.css';
 class Category extends React.Component {
     constructor(props) {
         super(props);
