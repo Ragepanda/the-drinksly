@@ -8,6 +8,55 @@ class Home extends React.Component {
         super(props); // ✅ We passed props
         console.log(props);      // ✅ {}
         console.log(this.props); // ✅ {}
+
+        this.state = {
+            searchText: ""
+        }
+        this.setSearch = this.setSearch.bind(this);
+    }
+
+    setSearch(e){
+        this.setState({searchText: e.target.value});
+
+    }
+
+    searchResultsBox() {
+        if(this.state.searchText == ""){
+            return (<div/>);
+        }
+        return (
+            <div>
+                <header className="major" id="home-header">
+                    <h3>Search Results</h3>
+                </header>
+                <div className="row no-collapse-1">
+                    <section className="4u">
+                        <a href="/drinks/example" className="image featured">
+                            <img src="images/alcoholic_drinks/gin_drinks/gin-drinks.jpg" alt="gin drinks" />
+                        </a>
+                        <div className="box">
+                            <p>Gin Drinks</p>
+                        </div>
+                    </section>
+                    <section className="4u">
+                        <a href="/drinks/example" className="image featured">
+                            <img src="images/alcoholic_drinks/rum_drinks/rum-drinks.jpg" alt="rum drinks" />
+                        </a>
+                        <div className="box">
+                            <p>Rum Drinks</p>
+                        </div>
+                    </section>
+                    <section className="4u">
+                        <a href="/drinks/example" className="image featured">
+                            <img src="images/alcoholic_drinks/scotch_drinks/scotch-drinks.jpg" alt="scotch drinks" />
+                        </a>
+                        <div className="box">
+                            <p>Scotch Drinks</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        )
     }
 
     render() {
@@ -25,7 +74,7 @@ class Home extends React.Component {
                             <form className="center" id="home-form">
                                 <div className="row half">
                                     <div className="12u">
-                                        <input className="text" type="text" name="name" placeholder="Name" />
+                                        <input className="text" type="text" name="homeSearch" placeholder="Search Drinks..." value={this.state.searchText} onChange={this.setSearch}/>
                                     </div>
                                 </div>
                                 <div className="row quarter">
@@ -35,15 +84,17 @@ class Home extends React.Component {
                                 </div>
                             </form>
                         </section>
+
+                          {this.searchResultsBox()}
                     </div>
-                </div>
 
 
-                <div className="wrapper style1">
-                    <div className="container">
+
+
+                    <div className="container" id="featured-drinks">
                         <header className="major" id="home-header">
-                            <h2>Mauris vulputate dolor</h2>
-                            <span className="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+                            <h2>Featured Drinks</h2>
+                            <span className="byline">Try some of Drinkskly's most popular searches</span>
                         </header>
                         <div className="row no-collapse-1">
                             <section className="4u">

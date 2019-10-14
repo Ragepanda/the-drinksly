@@ -588,6 +588,10 @@
 		text-align: center;
 	}
 
+	#featured-drinks{
+		padding-top:25px;
+	}
+
 	#page {
 		position: relative;
 		background: #FFF;
@@ -602,6 +606,10 @@
 		padding: 6em 4em 6em 4em;
 		border-radius: 6px;
 		text-align: center;
+	}
+
+	#search-box > div > div > section{
+		color:#130E0D
 	}
 
 	#home-form{
@@ -673,7 +681,7 @@
   
     body {
       /* min-width: (containers) */
-      min-width: 1200px;
+      min-width: 88%;
     }
   
     .container {
@@ -681,7 +689,7 @@
       margin-right: auto;
       
       /* width: (containers) */
-      width: 1200px;
+      width: 88%;
     }
   
     /* Modifiers */
