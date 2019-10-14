@@ -26,7 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="App wrapper style1">
+        <div className="App">
 
           <Navbar />
 
