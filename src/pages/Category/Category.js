@@ -45,9 +45,11 @@ class Category extends React.Component {
 
    render() {
         return (
-            <div id="extra">
-                <div className="container">
-                return {this.createTable()}
+            <div className="wrapper style1">
+                <div id="extra">
+                    <div className="container">
+                        {this.createTable()}
+                    </div>
                 </div>
             </div>
                     
