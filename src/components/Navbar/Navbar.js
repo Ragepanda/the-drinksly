@@ -13,7 +13,7 @@ class Navbar extends React.Component {
         return (
             <div id="header" class="skel-panels-fixed">
                 <div id="logo">
-                    <h1><a href="index.html">DrinkSama</a></h1>
+                    <h1><a href="/">DrinkSama</a></h1>
                 </div>
                 <nav id="nav">
                     <ul>
