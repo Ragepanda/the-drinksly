@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 // import ReactSearchBox from 'react-search-box'
 import Card from "../../components/Cards/Card";
 import './Home.css';
+import Collapsible from "react-collapsible";
 
 class Home extends React.Component {
     constructor(props) {
@@ -59,6 +60,58 @@ class Home extends React.Component {
                                         <input className="text" type="text" name="homeSearch" placeholder="Search Drinks..." value={this.state.searchText} onChange={this.setSearch} />
                                     </div>
                                 </div>
+                                <div className="row half">
+                                    <section className="6u">
+                                        <Collapsible trigger="Filter By Spirits +">
+                                            
+                                                <button class="button">Rum</button>
+                                            
+                                                <button class="button">Gin</button>
+                                            
+                                                <button class="button">Scotch</button>
+                                            
+                                                <button class="button">Tequila</button>
+                                            
+                                                <button class="button">Vodka</button>
+                                            
+                                                <button class="button">Whiskey</button>
+                                        </Collapsible>
+                                    </section>
+                                    <section className="6u">
+                                        <Collapsible trigger="Filter By Type +">
+                                            
+                                                <button class="button">Blended</button>
+                                            
+                                                <button class="button">Classic</button>
+                                            
+                                                <button class="button">Hot</button>
+                                            
+                                                <button class="button">Holiday</button>
+                                            
+                                                <button class="button">Novelty</button>
+                                            
+                                                <button class="button">Shots</button>
+                                        </Collapsible>
+                                    </section>
+                                    {/* <section className="2u">
+                                        <button class="button">Rum</button>
+                                    </section>
+                                    <section className="2u">
+                                        <button class="button">Gin</button>
+                                    </section>
+                                    <section className="2u">
+                                        <button class="button">Scotch</button>
+                                    </section>
+                                    <section className="2u">
+                                        <button class="button">Tequila</button>
+                                    </section>
+                                    <section className="2u">
+                                        <button class="button">Vodka</button>
+                                    </section>
+                                    <section className="2u">
+                                        <button class="button">Whiskey</button>
+                                    </section> */}
+                                </div>
                             </form>
                         </section>
 
@@ -73,57 +126,17 @@ class Home extends React.Component {
                             <h2>Featured Drinks</h2>
                             <span className="byline">Try some of Drinkskly's most popular searches</span>
                         </header>
+
                         <div className="row no-collapse-1">
-                            <section className="4u">
-                                <a href="/drinks/example" className="image featured">
-                                    <img src="images/alcoholic_drinks/gin_drinks/gin-drinks.jpg" alt="gin drinks" />
-                                </a>
-                                <div className="box">
-                                    <p>Gin Drinks</p>
-                                </div>
-                            </section>
-                            <section className="4u">
-                                <a href="/drinks/example" className="image featured">
-                                    <img src="images/alcoholic_drinks/rum_drinks/rum-drinks.jpg" alt="rum drinks" />
-                                </a>
-                                <div className="box">
-                                    <p>Rum Drinks</p>
-                                </div>
-                            </section>
-                            <section className="4u">
-                                <a href="/drinks/example" className="image featured">
-                                    <img src="images/alcoholic_drinks/scotch_drinks/scotch-drinks.jpg" alt="scotch drinks" />
-                                </a>
-                                <div className="box">
-                                    <p>Scotch Drinks</p>
-                                </div>
-                            </section>
+                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/gin_drinks/gin-drinks.jpg" title="Gin Drinks" />
+                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/rum_drinks/rum-drinks.jpg" title="Rum Drinks" />
+                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/scotch_drinks/scotch-drinks.jpg" title="Scotch Drinks" />
+
                         </div>
                         <div className="row no-collapse-1">
-                            <section className="4u">
-                                <a href="/drinks/example" className="image featured">
-                                    <img src="images/alcoholic_drinks/tequila_drinks/tequila-drinks.jpg" alt="tequila drinks" />
-                                </a>
-                                <div className="box">
-                                    <p>Tequila Drinks</p>
-                                </div>
-                            </section>
-                            <section className="4u">
-                                <a href="/drinks/example" className="image featured">
-                                    <img src="images/alcoholic_drinks/vodka_drinks/vodka-drinks.jpg" alt="vodka drinks" />
-                                </a>
-                                <div className="box">
-                                    <p>Vodka Drinks</p>
-                                </div>
-                            </section>
-                            <section className="4u">
-                                <a href="/drinks/example" className="image featured">
-                                    <img src="images/alcoholic_drinks/whiskey_drinks/whiskey-drinks.jpg" alt="vodka drinks" />
-                                </a>
-                                <div className="box">
-                                    <p>Whiskey Drinks</p>
-                                </div>
-                            </section>
+                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/tequila_drinks/tequila-drinks.jpg" title="Tequila Drinks" />
+                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/vodka_drinks/vodka-drinks.jpg" title="Vodka Drinks" />
+                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/whiskey_drinks/whiskey-drinks.jpg" title="Whiskey Drinks" />
                         </div>
                     </div>
                 </div>
