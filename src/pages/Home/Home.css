@@ -1,3 +1,36 @@
 #search-results{
     padding-top:20px;
 }
+
+#search-box {
+    position: relative;
+    background: #130E0D;
+    color: white;
+    padding: 6em 4em 6em 4em;
+    border-radius: 6px;
+    text-align: center;
+}
+
+#search-box > div > div > section{
+    color:#130E0D
+}
+
+#home-form{
+    text-align: center;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#home-header, #home-header > span{
+    color: white;
+    text-align: center;
+    background: #130E0D;
+    padding-top:40px;
+    margin-bottom:15px;
+}
+
+#featured-drinks{
+    padding-top:25px;
+}
+

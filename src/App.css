@@ -6,6 +6,16 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
+/*Collapsible */
+
+.Collapsible{
+	padding: 5px;
+}
+.Collapsible__trigger{
+		color: white;
+		font-size: 16pt;
+		font-weight: 450;
+	}
 
 /* Basic */
 
@@ -438,13 +448,14 @@
 		color: white;
 		cursor: pointer;
 		display: inline-block;
-		padding: 0.75em 1.5em;
+		width: 100%;
+		/* padding: 0.75em 1.5em; */
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
 		display: inline-block;
-		font-size: 1.2em;
-		font-weight: 600;
+		font-size: .6em;
+		font-weight: 400;
 		color: #FFF !important;
 	}
 
@@ -595,10 +606,6 @@
 		text-align: center;
 	}
 
-	#featured-drinks{
-		padding-top:25px;
-	}
-
 	#page {
 		position: relative;
 		background: #FFF;
@@ -606,33 +613,7 @@
 		border-radius: 6px;
 	}
 
-	#search-box {
-		position: relative;
-		background: #130E0D;
-		color: white;
-		padding: 6em 4em 6em 4em;
-		border-radius: 6px;
-		text-align: center;
-	}
-
-	#search-box > div > div > section{
-		color:#130E0D
-	}
-
-	#home-form{
-		text-align: center;
-		display: block;
-		margin-left:auto;
-		margin-right:auto;
-	}
-
-	#home-header, #home-header > span{
-		color: white;
-		text-align: center;
-		background: #130E0D;
-		padding-top:40px;
-		margin-bottom:15px;
-	}
+	
 
 /* Sidebar */
 
