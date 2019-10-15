@@ -8,11 +8,53 @@ class Subcategory extends React.Component {
         console.log(this.props); // ✅ {}
       }
 
-    render() {
+
+    createTable = () => {
+
+        const drinks = ["Gin", "Rum", "Scotch", "Tequila", "Vodka", "Whiskey"]
+        const types  = ["Blended", "Classic","Hot", "Holiday", "Novelty", "Shots"]
+
+        const drinkRoute = ["Drinks", "Drinks", "Drinks", "Drinks" ,"Drinks", "Drinks"]
+        const typeRoute = ["Cocktails", "Cocktails" ,"Cocktails", "Cocktails", "Cocktails", ""]
+
+        let descrip = this.props.match.params.category == "spirits" ? drinkRoute : typeRoute;
+        let fillData = this.props.match.params.category == "spirits" ? drinks : types;
+
+
+        let table = []
+
+        let ctr = 0;
+        // Outer loop to create parent
+        for (let i = 0; i < fillData.length/3; i++) {
+            let children = []
+        //Inner loop to create children
+        for (let j = 0; j < 3; j++) {
+            children.push(<div className="4u"><a href={"/"+this.props.match.params.category+"/"+fillData[ctr]} className="image featured"><img src={"images/alcoholic_drinks/"+fillData[ctr]+"_"+descrip[ctr]+"/"+fillData[ctr]+"-"+descrip[ctr]+".jpg"} alt={fillData[ctr]+" " +descrip[ctr]} /></a><div className="box"><p>{fillData[ctr]} {descrip[ctr]}</p></div></div>)
+            ctr++;
+        }
+            //Create the parent and add the children
+            table.push(<div className="row no-collapse-1">{children}</div>)
+        }
+        return table
+    }
+
+   render() {
         return (
-           <div>
-               <p> This is the subcategory page Category:{this.props.match.params.category} Subcategory: {this.props.match.params.subcategory} </p>
-           </div>
+            <div className="wrapper style1">
+            <div className="container 4u" id="title-box">
+                <section>
+                    <header className="major">
+                        <h2>{this.props.match.params.subcategory}</h2>
+                    </header>
+                </section>
+            </div>
+                <div id="extra">
+                    <div className="container">
+                        {this.createTable()}
+                    </div>
+                </div>
+            </div>
+                    
         );
     }
 };

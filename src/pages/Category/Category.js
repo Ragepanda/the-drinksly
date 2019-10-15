@@ -29,7 +29,7 @@ class Category extends React.Component {
 
         let ctr = 0;
         // Outer loop to create parent
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < fillData.length/3; i++) {
             let children = []
         //Inner loop to create children
         for (let j = 0; j < 3; j++) {
@@ -51,6 +51,13 @@ class Category extends React.Component {
    render() {
         return (
             <div className="wrapper style1">
+                    <div className="container 4u" id="title-box">
+                        <section>
+                            <header className="major">
+                                <h2>{this.props.match.params.category}</h2>
+                            </header>
+                        </section>
+                    </div>
                 <div id="extra">
                     <div className="container">
                         {this.createTable()}
