@@ -619,6 +619,20 @@
 		color:#130E0D
 	}
 
+	#title-box {
+		position: relative;
+		background: #130E0D;
+		color: white;
+		padding: 3em 0em 1em 0em;
+		border-radius: 6px;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	#title-box > div > div > section{
+		color:#130E0D
+	}
+
 	#home-form{
 		text-align: center;
 		display: block;
