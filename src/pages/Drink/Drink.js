@@ -26,14 +26,18 @@ class Drink extends React.Component {
               </div>
               <div className="major 6u" id="recipeBox">
                 <br/>
+                <p>Ingredients</p>
+                <br/>
                 <ul>
-                  <li>1/2 blue balls eat my ass</li>
-                  <li>3/4 bite me in the nipple</li>
-                  <li>1/2 blue balls eat my ass</li>
-                  <li>3/4 bite me in the nipple</li>
+                  <li>1/2 play the game</li>
+                  <li>3/4 add some razzle dazzle</li>
+                  <li>1/2 get some vodka </li>
+                  <li>3/4 peel an apple</li>
                 </ul>
                 <br/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Directions</p>
+                <br/>
+                <p className="padded">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <br/>
                 </div>
                 </div>
