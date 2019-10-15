@@ -28,7 +28,7 @@ class Category extends React.Component {
 
         let ctr = 0;
         // Outer loop to create parent
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < fillData.length/3; i++) {
             let children = []
         //Inner loop to create children
         for (let j = 0; j < 3; j++) {
