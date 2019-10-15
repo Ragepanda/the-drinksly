@@ -613,7 +613,51 @@
 		border-radius: 6px;
 	}
 
+<<<<<<< HEAD
 	
+=======
+	#search-box {
+		position: relative;
+		background: #130E0D;
+		color: white;
+		padding: 6em 4em 6em 4em;
+		border-radius: 6px;
+		text-align: center;
+	}
+
+	#search-box > div > div > section{
+		color:#130E0D
+	}
+
+	#title-box {
+		position: relative;
+		background: #130E0D;
+		color: white;
+		padding: 3em 0em 1em 0em;
+		border-radius: 6px;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	#title-box > div > div > section{
+		color:#130E0D
+	}
+
+	#home-form{
+		text-align: center;
+		display: block;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	#home-header, #home-header > span{
+		color: white;
+		text-align: center;
+		background: #130E0D;
+		padding-top:40px;
+		margin-bottom:15px;
+	}
+>>>>>>> b28fae37b002786015003f4630f85577c72d5eb7
 
 /* Sidebar */
 
