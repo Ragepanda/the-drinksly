@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../../components/Cards/Card.js";
 
 class Category extends React.Component {
     constructor(props) {
@@ -32,7 +33,12 @@ class Category extends React.Component {
             let children = []
         //Inner loop to create children
         for (let j = 0; j < 3; j++) {
-            children.push(<div className="4u"><a href={"/"+this.props.match.params.category+"/"+fillData[ctr]} className="image featured"><img src={"images/alcoholic_drinks/"+fillData[ctr]+"_"+descrip[ctr]+"/"+fillData[ctr]+"-"+descrip[ctr]+".jpg"} alt={fillData[ctr]+" " +descrip[ctr]} /></a><div className="box"><p>{fillData[ctr]} {descrip[ctr]}</p></div></div>)
+            children.push(<Card
+                    route = {"/"+this.props.match.params.category+"/"+fillData[ctr]}
+                    image_src = {"images/alcoholic_drinks/"+fillData[ctr]+"_"+descrip[ctr]+"/"+fillData[ctr]+"-"+descrip[ctr]+".jpg"}
+                    title = {fillData[ctr] + " " + descrip[ctr]}
+                />)
+            
             ctr++;
         }
             //Create the parent and add the children
