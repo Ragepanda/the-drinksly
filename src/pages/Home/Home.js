@@ -43,6 +43,10 @@ class Home extends React.Component {
     }
 
     render() {
+    const drink = 
+    [
+        {name: "Manhattan", base_spirit: "bourbon", drink_type: "classic cocktail", img: "manhattan.jpg"},
+    ]
         return (
             <div>
 
