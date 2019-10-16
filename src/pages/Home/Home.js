@@ -12,15 +12,147 @@ class Home extends React.Component {
         console.log(this.props); // ✅ {}
 
         this.state = {
-            searchText: ""
+            searchText: "",
+            spritsTrigger: "Filter By Spirits +",
+            typeTrigger: "Filter By Type +",
+            rumToggle: false,
+            ginToggle: false,
+            scotchToggle: false,
+            tequilaToggle: false,
+            vodkaToggle: false,
+            whiskeyToggle: false,
+            blendedToggle: false,
+            classicToggle: false,
+            hotToggle: false,
+            holidayToggle: false,
+            noveltyToggle: false,
+            scotchClassname: "button small",
+            tequilaClassname: "button small",
+            vodkaClassname: "button small",
+            whiskeyClassname: "button small",
+            rumClassname: "button small",
+            ginClassname: "button small",
+            blendedClassname: "button small",
+            classicClassname: "button small",
+            hotClassname: "button small",
+            holidayClassname: "button small",
+            noveltyClassname: "button small"
+
         }
         this.setSearch = this.setSearch.bind(this);
+        this.spiritClose = this.spiritClose.bind(this);
+        this.spiritOpen = this.spiritOpen.bind(this);
+        this.rumState = this.rumState.bind(this);
+        this.ginState = this.ginState.bind(this)
+        this.scotchState = this.scotchState.bind(this)
+        this.tequilaState = this.tequilaState.bind(this)
+        this.vodkaState = this.vodkaState.bind(this)
+        this.whiskeyState = this.whiskeyState.bind(this)
+
     }
 
     setSearch(e) {
         this.setState({ searchText: e.target.value });
-
     }
+
+    spiritOpen(e){
+        e.target.trigger = "Filter By Spirits -";
+    }
+
+    spiritClose(e){
+        e.target.trigger = "Filter By Spirits +";
+    }
+
+    rumState(e){
+        e.preventDefault();
+        if(this.state.rumToggle == false){
+            this.setState({rumToggle: true});
+            this.setState({rumClassname: "button small selectedFilter"});
+        }
+
+        else{
+            this.setState({rumToggle: false});
+            this.setState({rumClassname: "button small"})
+        }
+
+        console.log(this.state.rumToggle);
+    }
+
+    ginState(e){
+        e.preventDefault();
+        if(this.state.ginToggle == false){
+            this.setState({ginToggle: true});
+            this.setState({ginClassname: "button small selectedFilter"});
+        }
+
+        else{
+            this.setState({ginToggle: false});
+            this.setState({ginClassname: "button small"})
+        }
+
+        console.log(this.state.ginToggle);
+    }
+
+    scotchState(e){
+        e.preventDefault();
+        if(this.state.scotchToggle == false){
+            this.setState({scotchToggle: true});
+            this.setState({scotchClassname: "button small selectedFilter"});
+        }
+
+        else{
+            this.setState({scotchToggle: false});
+            this.setState({scotchClassname: "button small"})
+        }
+
+        console.log(this.state.scotchToggle);
+    }
+
+    tequilaState(e){
+        e.preventDefault();
+        if(this.state.tequilaToggle == false){
+            this.setState({tequilaToggle: true});
+            this.setState({tequilaClassname: "button small selectedFilter"});
+        }
+
+        else{
+            this.setState({tequilaToggle: false});
+            this.setState({tequilaClassname: "button small"})
+        }
+
+        console.log(this.state.tequilaToggle);
+    }
+
+    vodkaState(e){
+        e.preventDefault();
+        if(this.state.vodkaToggle == false){
+            this.setState({vodkaToggle: true});
+            this.setState({vodkaClassname: "button small selectedFilter"});
+        }
+
+        else{
+            this.setState({vodkaToggle: false});
+            this.setState({vodkaClassname: "button small"})
+        }
+
+        console.log(this.state.vodkaToggle);
+    }
+
+    whiskeyState(e){
+        e.preventDefault();
+        if(this.state.whiskeyToggle == false){
+            this.setState({whiskeyToggle: true});
+            this.setState({whiskeyClassname: "button small selectedFilter"});
+        }
+
+        else{
+            this.setState({whiskeyToggle: false});
+            this.setState({whiskeyClassname: "button small"})
+        }
+
+        console.log(this.state.whiskeyToggle);
+    }
+
 
     searchResultsBox() {
         if (this.state.searchText == "") {
@@ -42,10 +174,25 @@ class Home extends React.Component {
         )
     }
 
+    componentDidMount(){
+        console.log(this.state.scotchClassName);
+        console.log(this.state.tequilaClassName);
+    }
     render() {
     const drink = 
     [
-        {name: "Manhattan", base_spirit: "bourbon", drink_type: "classic cocktail", img: "manhattan.jpg"},
+        {name: "Manhattan",   base_spirit: "bourbon",       drink_type: "classic cocktail", img: "manhattan.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "Mojito",      base_spirit: "rum",           drink_type: "classic cocktail", img: "mojito.jpg",      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 2 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "Gin Fizz",    base_spirit: "gin",           drink_type: "classic cocktail", img: "gin-fizz.jpg",    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 3 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "Pina Colada", base_spirit: "rum",           drink_type: "blended cocktail", img: "pina-colada.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 4 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "Hot Toddy",   base_spirit: "bourbon",       drink_type: "hot cocktail",     img: "hot-toddy.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 5 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "B-52",        base_spirit: "coffee liquor", drink_type: "shots",            img: "b-52.jpg",        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 6 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "Eggnog",      base_spirit: "bourbon",       drink_type: "holiday cocktail", img: "eggnog.jpg",      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "Jello Shots", base_spirit: "vodka",         drink_type: "novelty cocktail", img: "jelloshot.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}, 
+        {name: "Margarita",   base_spirit: "tequila",       drink_type: "blended cocktail", img: "margarita.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}, 
+        {name: "Scotch Sour", base_spirit: "scotch",        drink_type: "classic cocktail", img: "scotchsour.jpg",  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}, 
+
+
     ]
         return (
             <div>
@@ -58,7 +205,7 @@ class Home extends React.Component {
                                 <h2>The Drinksly</h2>
                                 <span className="byline">Find yours here</span>
                             </header>
-                            <form className="center" id="home-form">
+                            <form className="centered" id="home-form">
                                 <div className="row half">
                                     <div className="12u">
                                         <input className="text" type="text" name="homeSearch" placeholder="Search Drinks..." value={this.state.searchText} onChange={this.setSearch} />
@@ -66,55 +213,37 @@ class Home extends React.Component {
                                 </div>
                                 <div className="row half">
                                     <section className="6u">
-                                        <Collapsible trigger="Filter By Spirits +">
+                                        <Collapsible trigger="Filter By Spirits +" triggerWhenOpen={"Filter By Spirits -"}>
                                             
-                                                <button class="button">Rum</button>
+                                                <button className={this.state.rumClassname} onClick={this.rumState}>Rum</button>
                                             
-                                                <button class="button">Gin</button>
+                                                <button className={this.state.ginClassname} onClick={this.ginState}>Gin</button>
                                             
-                                                <button class="button">Scotch</button>
+                                                <button className={this.state.scotchClassname} onClick={this.scotchState}>Scotch</button>
                                             
-                                                <button class="button">Tequila</button>
+                                                <button className={this.state.tequilaClassname} onClick={this.tequilaState}>Tequila</button>
                                             
-                                                <button class="button">Vodka</button>
+                                                <button className={this.state.vodkaClassname} onClick={this.vodkaState}>Vodka</button>
                                             
-                                                <button class="button">Whiskey</button>
+                                                <button className={this.state.whiskeyClassname} onClick={this.whiskeyState}>Whiskey</button>
                                         </Collapsible>
                                     </section>
                                     <section className="6u">
-                                        <Collapsible trigger="Filter By Type +">
+                                        <Collapsible trigger="Filter By Type +"  triggerWhenOpen={"Filter By Type -"}>
                                             
-                                                <button class="button">Blended</button>
+                                                <button className="button small">Blended</button>
                                             
-                                                <button class="button">Classic</button>
+                                                <button className="button small">Classic</button>
                                             
-                                                <button class="button">Hot</button>
+                                                <button className="button small">Hot</button>
                                             
-                                                <button class="button">Holiday</button>
+                                                <button className="button small">Holiday</button>
                                             
-                                                <button class="button">Novelty</button>
+                                                <button className="button small">Novelty</button>
                                             
-                                                <button class="button">Shots</button>
+                                                <button className="button small">Shots</button>
                                         </Collapsible>
                                     </section>
-                                    {/* <section className="2u">
-                                        <button class="button">Rum</button>
-                                    </section>
-                                    <section className="2u">
-                                        <button class="button">Gin</button>
-                                    </section>
-                                    <section className="2u">
-                                        <button class="button">Scotch</button>
-                                    </section>
-                                    <section className="2u">
-                                        <button class="button">Tequila</button>
-                                    </section>
-                                    <section className="2u">
-                                        <button class="button">Vodka</button>
-                                    </section>
-                                    <section className="2u">
-                                        <button class="button">Whiskey</button>
-                                    </section> */}
                                 </div>
                             </form>
                         </section>
