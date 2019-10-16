@@ -17,12 +17,12 @@ class Drink extends React.Component {
               <div className="contiainer center">
                 <p> {this.props.match.params.drink} </p>
                 <header className="major 12u center" id="home-header">
-                  <h3>Drink Name</h3>
+                  <h3>{this.props.match.params.drink}</h3>
                 </header>
               </div>
               <div className = "row center">
               <div className="major 6u" id="recipeBox">
-                <img src="../images/non-alcholic_drinks/Coffee/brodie-vissers-with-cream-small.jpg"/>
+                <img src={"images/alcoholic_drinks/"+fillData[ctr]+"_"+descrip[ctr]+"/"+fillData[ctr]+"-"+descrip[ctr]+".jpg"}/>
               </div>
               <div className="major 6u" id="recipeBox">
                 <br/>
