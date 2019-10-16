@@ -85,9 +85,10 @@ class Home extends React.Component {
             var reducedName = drink.name.toLowerCase();
             return reducedName.includes(this.state.searchText.toLowerCase(), 0);
         })
-        console.log(subset);
         return subset;
     }
+
+
 
     spiritOpen(e){
         e.target.trigger = "Filter By Spirits -";
@@ -300,24 +301,38 @@ class Home extends React.Component {
 
   
     componentDidMount(){
-        console.log(this.state.scotchClassName);
-        console.log(this.state.tequilaClassName);
+        //console.log(this.state.scotchClassName);
+        //console.log(this.state.tequilaClassName);
+        //let doodoo = this.filterDrinks();
+        //console.log(doodoo[0].name);
+    }
+
+    createTable() {
+        var table = [];
+        var drinkSet = this.filterDrinks();
+
+        var ctr = 0;
+        // Outer loop to create parent
+        for (var i = 0; i < drinkSet.length/3; i++) {
+            var children = [];
+        //Inner loop to create children
+        for (var j = 0; j < 3 && ctr < drinkSet.length; j++) {
+            children.push(<Card
+                    route = {"/"+drinkSet[ctr].base_spirit+"/"+drinkSet[ctr].name}
+                    image_src = {"images/alcoholic_drinks/"+drinkSet[ctr].name+".jpg"}
+                    title = {drinkSet[ctr].name}
+                />);
+            
+            ctr++;
+        }
+            //Create the parent and add the children
+            table.push(<div className="row no-collapse-1">{children}</div>);
+        }
+        return table
     }
 
     render() {
-    const drink = 
-    [
-        {name: "Manhattan",   base_spirit: "bourbon",       drink_type: "classic cocktail", img: "manhattan.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
-        {name: "Mojito",      base_spirit: "rum",           drink_type: "classic cocktail", img: "mojito.jpg",      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 2 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
-        {name: "Gin Fizz",    base_spirit: "gin",           drink_type: "classic cocktail", img: "gin-fizz.jpg",    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 3 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
-        {name: "Pina Colada", base_spirit: "rum",           drink_type: "blended cocktail", img: "pina-colada.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 4 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
-        {name: "Hot Toddy",   base_spirit: "bourbon",       drink_type: "hot cocktail",     img: "hot-toddy.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 5 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
-        {name: "B-52",        base_spirit: "coffee liquor", drink_type: "shots",            img: "b-52.jpg",        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 6 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
-        {name: "Eggnog",      base_spirit: "bourbon",       drink_type: "holiday cocktail", img: "eggnog.jpg",      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
-        {name: "Jello Shots", base_spirit: "vodka",         drink_type: "novelty cocktail", img: "jelloshot.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}, 
-        {name: "Margarita",   base_spirit: "tequila",       drink_type: "blended cocktail", img: "margarita.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}, 
-        {name: "Scotch Sour", base_spirit: "scotch",        drink_type: "classic cocktail", img: "scotchsour.jpg",  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}, 
-    ]
+
         return (
             <div>
                 <div className="wrapper style1">
@@ -374,20 +389,13 @@ class Home extends React.Component {
 
                     <div className="container" id="featured-drinks">
                         <header className="major" id="home-header">
-                            <h2>Featured Drinks</h2>
+                            <h2>Featured Drinks</h2> 
                             <span className="byline">Try some of Drinkskly's most popular searches</span>
                         </header>
-
-                        <div className="row no-collapse-1">
-                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/gin_drinks/gin-drinks.jpg" title="Gin Drinks" />
-                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/rum_drinks/rum-drinks.jpg" title="Rum Drinks" />
-                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/scotch_drinks/scotch-drinks.jpg" title="Scotch Drinks" />
-
-                        </div>
-                        <div className="row no-collapse-1">
-                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/tequila_drinks/tequila-drinks.jpg" title="Tequila Drinks" />
-                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/vodka_drinks/vodka-drinks.jpg" title="Vodka Drinks" />
-                            <Card route="/drinks/example" image_src="images/alcoholic_drinks/whiskey_drinks/whiskey-drinks.jpg" title="Whiskey Drinks" />
+                    </div>
+                    <div id="extra">
+                        <div className="container">
+                            {this.createTable()}
                         </div>
                     </div>
                 </div>
