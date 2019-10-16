@@ -8,7 +8,21 @@ class Drink extends React.Component {
         super(props); // ✅ We passed props
         console.log(props);      // ✅ {}
         console.log(this.props); // ✅ {}
-      }
+    }
+
+    procImage(){
+
+      const drinks = ["Gin", "Rum", "Scotch", "Tequila", "Vodka", "Whiskey"]
+      const types  = ["Blended", "Classic","Hot", "Holiday", "Novelty", "Shots"]
+
+      const drinkRoute = ["Drinks", "Drinks", "Drinks", "Drinks" ,"Drinks", "Drinks"]
+      const typeRoute = ["Cocktails", "Cocktails" ,"Cocktails", "Cocktails", "Cocktails", ""]
+
+      let descrip = this.props.match.params.category == "spirits" ? drinkRoute : typeRoute;
+      let fillData = this.props.match.params.category == "spirits" ? drinks : types;
+      return(<img src={this.props.match.params.drink}/>);
+    }
+
       
     render() {
         return (
@@ -22,7 +36,7 @@ class Drink extends React.Component {
               </div>
               <div className = "row center">
               <div className="major 6u" id="recipeBox">
-                <img src={"images/alcoholic_drinks/"+fillData[ctr]+"_"+descrip[ctr]+"/"+fillData[ctr]+"-"+descrip[ctr]+".jpg"}/>
+                <img src=""/>
               </div>
               <div className="major 6u" id="recipeBox">
                 <br/>
