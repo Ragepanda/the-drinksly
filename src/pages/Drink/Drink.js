@@ -12,46 +12,66 @@ class Drink extends React.Component {
 
     procImage(){
 
-      const drinks = ["Gin", "Rum", "Scotch", "Tequila", "Vodka", "Whiskey"]
-      const types  = ["Blended", "Classic","Hot", "Holiday", "Novelty", "Shots"]
-
-      const drinkRoute = ["Drinks", "Drinks", "Drinks", "Drinks" ,"Drinks", "Drinks"]
-      const typeRoute = ["Cocktails", "Cocktails" ,"Cocktails", "Cocktails", "Cocktails", ""]
-
-      let descrip = this.props.match.params.category == "spirits" ? drinkRoute : typeRoute;
-      let fillData = this.props.match.params.category == "spirits" ? drinks : types;
-      return(<img src={this.props.match.params.drink}/>);
+      
+      
     }
 
       
     render() {
+       const drink = 
+      [
+        {name: "Manhattan",   base_spirit: "whiskey",       drink_type: "classic cocktail", img: "drew-beamer-manhattan.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: ["Ingredient 1", "Ingredient 2"]},
+        {name: "Mojito",      base_spirit: "rum",           drink_type: "classic cocktail", img: "mojito.jpg",      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 2 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "Gin Fizz",    base_spirit: "gin",           drink_type: "classic cocktail", img: "gin-fizz.jpg",    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 3 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "Pina Colada", base_spirit: "rum",           drink_type: "blended cocktail", img: "pina-colada.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 4 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "Hot Toddy",   base_spirit: "whiskey",       drink_type: "hot cocktail",     img: "hot-toddy.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 5 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "B-52",        base_spirit: "coffee liquor", drink_type: "shots",            img: "b-52.jpg",        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 6 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "Eggnog",      base_spirit: "whiskey",       drink_type: "holiday cocktail", img: "eggnog.jpg",      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+        {name: "Jello Shots", base_spirit: "vodka",         drink_type: "novelty cocktail", img: "jelloshot.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}, 
+        {name: "Margarita",   base_spirit: "tequila",       drink_type: "blended cocktail", img: "margarita.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}, 
+        {name: "Scotch Sour", base_spirit: "scotch",        drink_type: "classic cocktail", img: "scotchsour.jpg",  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}, 
+
+
+      ]
+        var info;
+        for(var i =0; i < drink.length; i++)
+        {
+          if(this.props.match.params.drink == drink[i].name)
+          {
+            info = drink[i];
+            break;
+          }
+        }
+
+        const recipe = info.recipe.map((item) =>
+            <li>{item}</li>
+        );
+
+        //console.log("images/alcoholic_drinks/"+info.base_spirit+"_drinks/"+info.img);
+
         return (
           <div>
             <div className="wrapper style1">
               <div className="contiainer center">
-                <p> {this.props.match.params.drink} </p>
                 <header className="major 12u center" id="home-header">
-                  <h3>{this.props.match.params.drink}</h3>
+                  <h3>{info.name}</h3>
                 </header>
               </div>
               <div className = "row center">
               <div className="major 6u" id="recipeBox">
-                <img src=""/>
+                <img src={"images/alcoholic_drinks/"+info.base_spirit+"_drinks/"+info.img}/>
               </div>
               <div className="major 6u" id="recipeBox">
+                <br/>
+                <p>Description</p>
+                <br/>
+                <p className="padded">{info.description}</p>
                 <br/>
                 <p>Ingredients</p>
                 <br/>
                 <ul>
-                  <li>1/2 play the game</li>
-                  <li>3/4 add some razzle dazzle</li>
-                  <li>1/2 get some vodka </li>
-                  <li>3/4 peel an apple</li>
+                  {recipe}
                 </ul>
-                <br/>
-                <p>Directions</p>
-                <br/>
-                <p className="padded">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <br/>
                 </div>
                 </div>
