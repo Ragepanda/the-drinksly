@@ -12,6 +12,7 @@
 	padding: 5px;
 }
 .Collapsible__trigger{
+		font-family: 'Raleway', sans-serif;
 		color: white;
 		font-size: 16pt;
 		font-weight: 450;
@@ -160,7 +161,7 @@
 		outline: 0;
 		padding: 1em 1em;
 		text-decoration: none;
-		width: 100%;
+		width: 96%;
 		border-radius: 6px;
 	}
 
@@ -450,6 +451,7 @@
 		display: inline-block;
 		width: 100%;
 		/* padding: 0.75em 1.5em; */
+		font-family: 'Raleway', sans-serif;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -486,6 +488,9 @@
 		input[type="button"].small,
 		.button.small {
 			font-size: 0.8em;
+			margin: 1em 2em 1em 2em;
+			padding: 1em 0em 1em 0em;
+			width: 40%;
 		}
 
 		input[type="submit"].medium,
@@ -495,6 +500,8 @@
 			padding: 0.80em 2em;
 			font-size: 1.6em;
 		}
+
+
 
 /* Wrapper */
 

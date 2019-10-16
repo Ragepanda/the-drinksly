@@ -69,7 +69,7 @@ class Home extends React.Component {
                                 <h2>The Drinksly</h2>
                                 <span className="byline">Find yours here</span>
                             </header>
-                            <form className="center" id="home-form">
+                            <form className="centered" id="home-form">
                                 <div className="row half">
                                     <div className="12u">
                                         <input className="text" type="text" name="homeSearch" placeholder="Search Drinks..." value={this.state.searchText} onChange={this.setSearch} />
@@ -79,33 +79,33 @@ class Home extends React.Component {
                                     <section className="6u">
                                         <Collapsible trigger="Filter By Spirits +">
                                             
-                                                <button class="button">Rum</button>
+                                                <button class="button small">Rum</button>
                                             
-                                                <button class="button">Gin</button>
+                                                <button class="button small">Gin</button>
                                             
-                                                <button class="button">Scotch</button>
+                                                <button class="button small">Scotch</button>
                                             
-                                                <button class="button">Tequila</button>
+                                                <button class="button small">Tequila</button>
                                             
-                                                <button class="button">Vodka</button>
+                                                <button class="button small">Vodka</button>
                                             
-                                                <button class="button">Whiskey</button>
+                                                <button class="button small">Whiskey</button>
                                         </Collapsible>
                                     </section>
                                     <section className="6u">
                                         <Collapsible trigger="Filter By Type +">
                                             
-                                                <button class="button">Blended</button>
+                                                <button class="button small">Blended</button>
                                             
-                                                <button class="button">Classic</button>
+                                                <button class="button small">Classic</button>
                                             
-                                                <button class="button">Hot</button>
+                                                <button class="button small">Hot</button>
                                             
-                                                <button class="button">Holiday</button>
+                                                <button class="button small">Holiday</button>
                                             
-                                                <button class="button">Novelty</button>
+                                                <button class="button small">Novelty</button>
                                             
-                                                <button class="button">Shots</button>
+                                                <button class="button small">Shots</button>
                                         </Collapsible>
                                     </section>
                                     {/* <section className="2u">
