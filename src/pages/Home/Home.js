@@ -26,23 +26,29 @@ class Home extends React.Component {
             hotToggle: false,
             holidayToggle: false,
             noveltyToggle: false,
-            rumClassname: "button",
-            ginClassname: "button",
-            scotchClassName: "button",
-            tequilaClassName: "button",
-            vodkaClassName: "button",
-            whiskeyClassName: "button",
-            blendedClassName: "button",
-            classicClassName: "button",
-            hotClassName: "button",
-            holidayClassName: "button",
-            noveltyClassName: "button",
+            scotchClassname: "button small",
+            tequilaClassname: "button small",
+            vodkaClassname: "button small",
+            whiskeyClassname: "button small",
+            rumClassname: "button small",
+            ginClassname: "button small",
+            blendedClassname: "button small",
+            classicClassname: "button small",
+            hotClassname: "button small",
+            holidayClassname: "button small",
+            noveltyClassname: "button small"
 
         }
         this.setSearch = this.setSearch.bind(this);
         this.spiritClose = this.spiritClose.bind(this);
         this.spiritOpen = this.spiritOpen.bind(this);
         this.rumState = this.rumState.bind(this);
+        this.ginState = this.ginState.bind(this)
+        this.scotchState = this.scotchState.bind(this)
+        this.tequilaState = this.tequilaState.bind(this)
+        this.vodkaState = this.vodkaState.bind(this)
+        this.whiskeyState = this.whiskeyState.bind(this)
+
     }
 
     setSearch(e) {
@@ -61,17 +67,91 @@ class Home extends React.Component {
         e.preventDefault();
         if(this.state.rumToggle == false){
             this.setState({rumToggle: true});
-            this.setState({rumClassname: "button selectedFilter"});
+            this.setState({rumClassname: "button small selectedFilter"});
         }
 
         else{
             this.setState({rumToggle: false});
-            this.setState({rumClassname: "button"})
+            this.setState({rumClassname: "button small"})
         }
 
         console.log(this.state.rumToggle);
     }
 
+    ginState(e){
+        e.preventDefault();
+        if(this.state.ginToggle == false){
+            this.setState({ginToggle: true});
+            this.setState({ginClassname: "button small selectedFilter"});
+        }
+
+        else{
+            this.setState({ginToggle: false});
+            this.setState({ginClassname: "button small"})
+        }
+
+        console.log(this.state.ginToggle);
+    }
+
+    scotchState(e){
+        e.preventDefault();
+        if(this.state.scotchToggle == false){
+            this.setState({scotchToggle: true});
+            this.setState({scotchClassname: "button small selectedFilter"});
+        }
+
+        else{
+            this.setState({scotchToggle: false});
+            this.setState({scotchClassname: "button small"})
+        }
+
+        console.log(this.state.scotchToggle);
+    }
+
+    tequilaState(e){
+        e.preventDefault();
+        if(this.state.tequilaToggle == false){
+            this.setState({tequilaToggle: true});
+            this.setState({tequilaClassname: "button small selectedFilter"});
+        }
+
+        else{
+            this.setState({tequilaToggle: false});
+            this.setState({tequilaClassname: "button small"})
+        }
+
+        console.log(this.state.tequilaToggle);
+    }
+
+    vodkaState(e){
+        e.preventDefault();
+        if(this.state.vodkaToggle == false){
+            this.setState({vodkaToggle: true});
+            this.setState({vodkaClassname: "button small selectedFilter"});
+        }
+
+        else{
+            this.setState({vodkaToggle: false});
+            this.setState({vodkaClassname: "button small"})
+        }
+
+        console.log(this.state.vodkaToggle);
+    }
+
+    whiskeyState(e){
+        e.preventDefault();
+        if(this.state.whiskeyToggle == false){
+            this.setState({whiskeyToggle: true});
+            this.setState({whiskeyClassname: "button small selectedFilter"});
+        }
+
+        else{
+            this.setState({whiskeyToggle: false});
+            this.setState({whiskeyClassname: "button small"})
+        }
+
+        console.log(this.state.whiskeyToggle);
+    }
 
 
     searchResultsBox() {
@@ -94,6 +174,10 @@ class Home extends React.Component {
         )
     }
 
+    componentDidMount(){
+        console.log(this.state.scotchClassName);
+        console.log(this.state.tequilaClassName);
+    }
     render() {
     const drink = 
     [
@@ -121,7 +205,7 @@ class Home extends React.Component {
                                 <h2>The Drinksly</h2>
                                 <span className="byline">Find yours here</span>
                             </header>
-                            <form className="center" id="home-form">
+                            <form className="centered" id="home-form">
                                 <div className="row half">
                                     <div className="12u">
                                         <input className="text" type="text" name="homeSearch" placeholder="Search Drinks..." value={this.state.searchText} onChange={this.setSearch} />
@@ -133,31 +217,31 @@ class Home extends React.Component {
                                             
                                                 <button className={this.state.rumClassname} onClick={this.rumState}>Rum</button>
                                             
-                                                <button className="button">Gin</button>
+                                                <button className={this.state.ginClassname} onClick={this.ginState}>Gin</button>
                                             
-                                                <button className="button">Scotch</button>
+                                                <button className={this.state.scotchClassname} onClick={this.scotchState}>Scotch</button>
                                             
-                                                <button className="button">Tequila</button>
+                                                <button className={this.state.tequilaClassname} onClick={this.tequilaState}>Tequila</button>
                                             
-                                                <button className="button">Vodka</button>
+                                                <button className={this.state.vodkaClassname} onClick={this.vodkaState}>Vodka</button>
                                             
-                                                <button className="button">Whiskey</button>
+                                                <button className={this.state.whiskeyClassname} onClick={this.whiskeyState}>Whiskey</button>
                                         </Collapsible>
                                     </section>
                                     <section className="6u">
                                         <Collapsible trigger="Filter By Type +"  triggerWhenOpen={"Filter By Type -"}>
                                             
-                                                <button className="button">Blended</button>
+                                                <button className="button small">Blended</button>
                                             
-                                                <button className="button">classic</button>
+                                                <button className="button small">Classic</button>
                                             
-                                                <button className="button">Hot</button>
+                                                <button className="button small">Hot</button>
                                             
-                                                <button className="button">Holiday</button>
+                                                <button className="button small">Holiday</button>
                                             
-                                                <button className="button">Novelty</button>
+                                                <button className="button small">Novelty</button>
                                             
-                                                <button className="button">Shots</button>
+                                                <button className="button small">Shots</button>
                                         </Collapsible>
                                     </section>
                                 </div>
