@@ -35,7 +35,7 @@ class App extends React.Component {
 
             <Route exact path="/:category" component={Category}/>
              
-            <Route exact path="/drinks/:drink" component={Drink}/>           
+            <Route exact path="/drinks/:drink" component={Drink}/>         
 
             <Route exact path="/:category/:subcategory" component={Subcategory}/>    
           </Switch>
