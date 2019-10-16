@@ -45,7 +45,7 @@ class Home extends React.Component {
         this.spiritClose = this.spiritClose.bind(this);
         this.spiritOpen = this.spiritOpen.bind(this);
 
-        this.renderResults = this.renderResults.bind(this);
+        this.filterDrinks = this.filterDrinks.bind(this);
 
         this.rumState = this.rumState.bind(this);
         this.ginState = this.ginState.bind(this);
@@ -66,7 +66,7 @@ class Home extends React.Component {
         this.setState({ searchText: e.target.value });
     }
 
-    renderResults(){
+    filterDrinks(){
         const drinkSet = 
         [
             {name: "Manhattan",   base_spirit: "bourbon",       drink_type: "classic cocktail", img: "manhattan.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
@@ -86,6 +86,7 @@ class Home extends React.Component {
             return reducedName.includes(this.state.searchText.toLowerCase(), 0);
         })
         console.log(subset);
+        return subset;
     }
 
     spiritOpen(e){
@@ -302,6 +303,7 @@ class Home extends React.Component {
         console.log(this.state.scotchClassName);
         console.log(this.state.tequilaClassName);
     }
+
     render() {
     const drink = 
     [
@@ -318,8 +320,6 @@ class Home extends React.Component {
     ]
         return (
             <div>
-
-
                 <div className="wrapper style1">
                     <div className="container" id="search-box">
                         <section>
@@ -369,12 +369,8 @@ class Home extends React.Component {
                                 </div>
                             </form>
                         </section>
-                        {this.renderResults()}
                         {this.searchResultsBox()}
                     </div>
-
-
-
 
                     <div className="container" id="featured-drinks">
                         <header className="major" id="home-header">
