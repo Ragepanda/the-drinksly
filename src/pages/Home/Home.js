@@ -14,11 +14,35 @@ class Home extends React.Component {
         this.state = {
             searchText: "",
             spritsTrigger: "Filter By Spirits +",
-            typeTrigger: "Filter By Type +"
+            typeTrigger: "Filter By Type +",
+            rumToggle: false,
+            ginToggle: false,
+            scotchToggle: false,
+            tequilaToggle: false,
+            vodkaToggle: false,
+            whiskeyToggle: false,
+            blendedToggle: false,
+            classicToggle: false,
+            hotToggle: false,
+            holidayToggle: false,
+            noveltyToggle: false,
+            rumClassname: "button",
+            ginClassname: "button",
+            scotchClassName: "button",
+            tequilaClassName: "button",
+            vodkaClassName: "button",
+            whiskeyClassName: "button",
+            blendedClassName: "button",
+            classicClassName: "button",
+            hotClassName: "button",
+            holidayClassName: "button",
+            noveltyClassName: "button",
+
         }
         this.setSearch = this.setSearch.bind(this);
         this.spiritClose = this.spiritClose.bind(this);
         this.spiritOpen = this.spiritOpen.bind(this);
+        this.rumState = this.rumState.bind(this);
     }
 
     setSearch(e) {
@@ -31,6 +55,21 @@ class Home extends React.Component {
 
     spiritClose(e){
         e.target.trigger = "Filter By Spirits +";
+    }
+
+    rumState(e){
+        e.preventDefault();
+        if(this.state.rumToggle == false){
+            this.setState({rumToggle: true});
+            this.setState({rumClassname: "button selectedFilter"});
+        }
+
+        else{
+            this.setState({rumToggle: false});
+            this.setState({rumClassname: "button"})
+        }
+
+        console.log(this.state.rumToggle);
     }
 
 
@@ -92,33 +131,33 @@ class Home extends React.Component {
                                     <section className="6u">
                                         <Collapsible trigger="Filter By Spirits +" triggerWhenOpen={"Filter By Spirits -"}>
                                             
-                                                <button class="button">Rum</button>
+                                                <button className={this.state.rumClassname} onClick={this.rumState}>Rum</button>
                                             
-                                                <button class="button">Gin</button>
+                                                <button className="button">Gin</button>
                                             
-                                                <button class="button">Scotch</button>
+                                                <button className="button">Scotch</button>
                                             
-                                                <button class="button">Tequila</button>
+                                                <button className="button">Tequila</button>
                                             
-                                                <button class="button">Vodka</button>
+                                                <button className="button">Vodka</button>
                                             
-                                                <button class="button">Whiskey</button>
+                                                <button className="button">Whiskey</button>
                                         </Collapsible>
                                     </section>
                                     <section className="6u">
                                         <Collapsible trigger="Filter By Type +"  triggerWhenOpen={"Filter By Type -"}>
                                             
-                                                <button class="button">Blended</button>
+                                                <button className="button">Blended</button>
                                             
-                                                <button class="button">Classic</button>
+                                                <button className="button">classic</button>
                                             
-                                                <button class="button">Hot</button>
+                                                <button className="button">Hot</button>
                                             
-                                                <button class="button">Holiday</button>
+                                                <button className="button">Holiday</button>
                                             
-                                                <button class="button">Novelty</button>
+                                                <button className="button">Novelty</button>
                                             
-                                                <button class="button">Shots</button>
+                                                <button className="button">Shots</button>
                                         </Collapsible>
                                     </section>
                                 </div>
