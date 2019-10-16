@@ -12,15 +12,28 @@ class Home extends React.Component {
         console.log(this.props); // ✅ {}
 
         this.state = {
-            searchText: ""
+            searchText: "",
+            spritsTrigger: "Filter By Spirits +",
+            typeTrigger: "Filter By Type +"
         }
         this.setSearch = this.setSearch.bind(this);
+        this.spiritClose = this.spiritClose.bind(this);
+        this.spiritOpen = this.spiritOpen.bind(this);
     }
 
     setSearch(e) {
         this.setState({ searchText: e.target.value });
-
     }
+
+    spiritOpen(e){
+        e.target.trigger = "Filter By Spirits -";
+    }
+
+    spiritClose(e){
+        e.target.trigger = "Filter By Spirits +";
+    }
+
+
 
     searchResultsBox() {
         if (this.state.searchText == "") {
@@ -77,7 +90,7 @@ class Home extends React.Component {
                                 </div>
                                 <div className="row half">
                                     <section className="6u">
-                                        <Collapsible trigger="Filter By Spirits +">
+                                        <Collapsible trigger="Filter By Spirits +" triggerWhenOpen={"Filter By Spirits -"}>
                                             
                                                 <button class="button small">Rum</button>
                                             
@@ -93,7 +106,7 @@ class Home extends React.Component {
                                         </Collapsible>
                                     </section>
                                     <section className="6u">
-                                        <Collapsible trigger="Filter By Type +">
+                                        <Collapsible trigger="Filter By Type +"  triggerWhenOpen={"Filter By Type -"}>
                                             
                                                 <button class="button small">Blended</button>
                                             
@@ -108,24 +121,6 @@ class Home extends React.Component {
                                                 <button class="button small">Shots</button>
                                         </Collapsible>
                                     </section>
-                                    {/* <section className="2u">
-                                        <button class="button">Rum</button>
-                                    </section>
-                                    <section className="2u">
-                                        <button class="button">Gin</button>
-                                    </section>
-                                    <section className="2u">
-                                        <button class="button">Scotch</button>
-                                    </section>
-                                    <section className="2u">
-                                        <button class="button">Tequila</button>
-                                    </section>
-                                    <section className="2u">
-                                        <button class="button">Vodka</button>
-                                    </section>
-                                    <section className="2u">
-                                        <button class="button">Whiskey</button>
-                                    </section> */}
                                 </div>
                             </form>
                         </section>
