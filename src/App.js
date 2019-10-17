@@ -15,6 +15,7 @@ import Home from "./pages/Home/Home";
 import Category from "./pages/Category/Category";
 import Drink from "./pages/Drink/Drink";
 import Subcategory from "./pages/Subcategory/Subcategory";
+import Supersubcategory from "./pages/Supersubcategory/Supersubcategory";
 
 
 class App extends React.Component {
@@ -38,6 +39,8 @@ class App extends React.Component {
             <Route exact path="/drinks/:drink" component={Drink}/>         
 
             <Route exact path="/:category/:subcategory" component={Subcategory}/>    
+
+            <Route exact path="/:category/:subcatogry/:supersubcategory" component={Supersubcategory}/>
           </Switch>
         </div>
       </Router>

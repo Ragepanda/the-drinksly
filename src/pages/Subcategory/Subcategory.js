@@ -18,8 +18,9 @@ class Subcategory extends React.Component {
         const typeRoute = ["Cocktails", "Cocktails" ,"Cocktails", "Cocktails", "Cocktails", ""]
 
         let descrip = this.props.match.params.category == "spirits" ? drinkRoute : typeRoute;
-        let fillData = this.props.match.params.category == "spirits" ? drinks : types;
+        let fillData = this.props.match.params.category == "spirits" ? types : drinks;
 
+        
 
         let table = []
 
