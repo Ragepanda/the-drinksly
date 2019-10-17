@@ -5,6 +5,25 @@
 	
 }
 
+#drinkImg{
+
+	padding-top: 20px;
+	padding-bottom: 18px;
+}
+
+#title{
+	font-size: 30px;
+	color: white;
+	background-color: black;
+	padding-top: 20px;
+	
+	
+}
+
+#imgBox{
+	background-color: black; 
+}
+
 .center {
   margin: auto;
   width: 80%;

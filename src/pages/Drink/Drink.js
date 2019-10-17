@@ -20,7 +20,7 @@ class Drink extends React.Component {
     render() {
        const drink = 
       [
-        {name: "Manhattan",   base_spirit: "whiskey",       drink_type: "classic cocktail", img: "drew-beamer-manhattan.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: ["Ingredient 1", "Ingredient 2"]},
+        {name: "Manhattan",   base_spirit: "whiskey",       drink_type: "classic cocktail", img: "drew-beamer-manhattan-small.jpg",   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: ["Ingredient 1", "Ingredient 2", <br/>, "step 1 shake", "step 2 mix"]},
         {name: "Mojito",      base_spirit: "rum",           drink_type: "classic cocktail", img: "mojito.jpg",      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 2 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
         {name: "Gin Fizz",    base_spirit: "gin",           drink_type: "classic cocktail", img: "gin-fizz.jpg",    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 3 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
         {name: "Pina Colada", base_spirit: "rum",           drink_type: "blended cocktail", img: "pina-colada.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 4 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
@@ -52,16 +52,13 @@ class Drink extends React.Component {
         return (
           <div>
             <div className="wrapper style1">
-              <div className="contiainer center">
-                <header className="major 12u center" id="home-header">
-                  <h3>{info.name}</h3>
-                </header>
-              </div>
+           
               <div className = "row center">
-              <div className="major 6u" id="recipeBox">
-                <img src={"images/alcoholic_drinks/"+info.base_spirit+"_drinks/"+info.img}/>
+              <div className="major 6u" id="imgBox">
+                <img id="drinkImg" src={"../../images/alcoholic_drinks/"+info.base_spirit+"_drinks/"+info.img}/>
               </div>
               <div className="major 6u" id="recipeBox">
+                <h3 className="center" id="title">{info.name}</h3>
                 <br/>
                 <p>Description</p>
                 <br/>
