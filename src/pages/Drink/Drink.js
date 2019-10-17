@@ -53,13 +53,12 @@ class Drink extends React.Component {
           <div>
             <div className="wrapper style1">
            
-                    
-              <h3 className="center" id="title">{info.name}</h3>
               <div className = "row center">
               <div className="major 6u" id="imgBox">
                 <img id="drinkImg" src={"../../images/alcoholic_drinks/"+info.base_spirit+"_drinks/"+info.img}/>
               </div>
               <div className="major 6u" id="recipeBox">
+                <h3 className="center" id="title">{info.name}</h3>
                 <br/>
                 <p>Description</p>
                 <br/>
