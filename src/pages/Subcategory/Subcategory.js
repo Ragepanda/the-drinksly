@@ -7,10 +7,10 @@ import "./Subcategory.css"
 class Subcategory extends React.Component {
     constructor(props) {
         super(props); // ✅ We passed props
-        console.log(props);      // ✅ {}
-        console.log(this.props.match.params.category); // ✅ {}
+
 
         this.printButtonValue = this.printButtonValue.bind(this);
+        this.filterDrinks = this.filterDrinks.bind(this);
 
         this.state = {
             typesPicked: this.props.match.params.category === "spirits" ? false : true,
@@ -18,7 +18,7 @@ class Subcategory extends React.Component {
 
             ginSelected: false,
             rumSelected: false,
-            scotchSelect: false,
+            scotchSelected: false,
             tequilaSelected: false,
             vodkaSelected: false,
             whiskeySelected: false,
@@ -29,12 +29,164 @@ class Subcategory extends React.Component {
             holidaySelected: false,
             noveltySelected: false,
             shotsSelected: false,
+
+            scotchClassname: "button small 2u",
+            tequilaClassname: "button small 2u",
+            vodkaClassname: "button small 2u",
+            whiskeyClassname: "button small 2u",
+            rumClassname: "button small 2u",
+            ginClassname: "button small 2u",
+            blendedClassname: "button small 2u",
+            classicClassname: "button small 2u",
+            hotClassname: "button small 2u",
+            holidayClassname: "button small 2u",
+            noveltyClassname: "button small 2u",
+            shotsClassname: "button small 2u"
         }
     }
 
 
-    printButtonValue(e){
-        console.log("Button Value: "+e.target.value);
+    printButtonValue(e) {
+        switch (e.target.value) {
+            case "Gin":
+                if (this.state.ginSelected == false) {
+                    this.setState({ ginSelected: true });
+                    this.setState({ ginClassname: "button small 2u selectedFilter" });
+                }
+                else {
+                    this.setState({ ginSelected: false });
+                    this.setState({ ginClassname: "button small 2u" })
+                }
+
+                break;
+
+            case "Rum":
+
+                if (this.state.rumSelected === false) {
+                    this.setState({ rumSelected: true });
+                    this.setState({ rumClassname: "button small 2u selectedFilter" });
+                } else {
+                    this.setState({ rumSelected: false });
+                    this.setState({ rumClassname: "button small 2u" })
+                }
+                break;
+
+            case "Scotch":
+
+                if (this.state.scotchSelected === false) {
+                    this.setState({ scotchSelected: true });
+                    this.setState({ scotchClassname: "button small 2u selectedFilter" });
+                } else {
+                    this.setState({ scotchSelected: false });
+                    this.setState({ scotchClassname: "button small 2u" })
+                }
+                break;
+
+            case "Tequila":
+
+                if (this.state.tequilaSelected === false) {
+                    this.setState({ tequilaSelected: true });
+                    this.setState({ tequilaClassname: "button small 2u selectedFilter" });
+                } else {
+                    this.setState({ tequilaSelected: false });
+                    this.setState({ tequilaClassname: "button small 2u" })
+                }
+                break;
+
+            case "Vodka":
+
+                if (this.state.vodkaSelected === false) {
+                    this.setState({ vodkaSelected: true });
+                    this.setState({ vodkaClassname: "button small 2u selectedFilter" });
+                } else {
+                    this.setState({ vodkaSelected: true });
+                    this.setState({ vodkaClassname: "button small 2u" })
+                }
+                break;
+
+            case "Whiskey":
+
+                if (this.state.whiskeySelected === false) {
+                    this.setState({ whiskeySelected: true });
+                    this.setState({ whiskeyClassname: "button small 2u selectedFilter" });
+                } else {
+                    this.setState({ whiskeySelected: true });
+                    this.setState({ whiskeyClassname: "button small 2u" })
+                }
+                break;
+
+            case "Blended":
+
+                if (this.state.blendedSelected === false) {
+                    this.setState({ blendedSelected: true });
+                    this.setState({ blendedClassname: "button small 2u selectedFilter" });
+                } else {
+                    this.setState({ blendedSelected: false });
+                    this.setState({ blendedClassname: "button small 2u" })
+                }
+                break;
+
+            case "Classic":
+
+                if (this.state.classicSelected === false) {
+                    this.setState({ classicSelected: true });
+                    this.setState({ classicClassname: "button small 2u selectedFilter" });
+                }
+                else {
+                    this.setState({ classicSelected: false });
+                    this.setState({ classicClassname: "button small 2u" })
+                }
+                break;
+
+            case "Hot":
+
+                if (this.state.hotSelected === false) {
+                    this.setState({ hotSelected: true });
+                    this.setState({ hotClassname: "button small 2u selectedFilter" });
+                }
+                else {
+                    this.setState({ hotSelected: false });
+                    this.setState({ hotClassname: "button small 2u" })
+                }
+                break;
+
+            case "Holiday":
+
+                if (this.state.holidaySelected === false) {
+                    this.setState({holidaySelected: true});
+                    this.setState({ holidayClassname: "button small 2u selectedFilter" });
+                }
+                else {
+                    this.setState({holidaySelected: false});
+                    this.setState({ holidayClassname: "button small 2u" });
+                    break;
+                } 
+
+            case "Novelty":
+
+                if (this.state.noveltySelected === false) {
+                    this.setState({noveltySelected: true});
+                    this.setState({ noveltyClassname: "button small 2u selectedFilter" });
+                }
+                else {
+                    this.setState({noveltySelected: false});
+                    this.setState({ noveltyClassname: "button small 2u" });
+                    break;
+                } 
+
+            case "Shots":
+
+                if (this.state.shotsSelected === false) {
+                    this.setState({shotsSelected: true});
+                    this.setState({ shotsClassname: "button small 2u selectedFilter" });
+                }
+                else {
+                    this.setState({shotsSelected: false});
+                    this.setState({ shotsClassname: "button small 2u" });
+                }
+                break;
+
+        }
     }
 
     createTable = () => {
@@ -58,30 +210,59 @@ class Subcategory extends React.Component {
             fillData = drinks;
         }
 
-
         let table = [];
-        console.log("Is Spirits:" + this.state.spiritsPicked);
-        console.log("Is Types: " + this.state.typesPicked);
         let ctr = 0;
         // Outer loop to create parent
         for (let i = 0; i < fillData.length; i++) {
 
             table.push(<button className="button small 2u" value={fillData[i]} onClick={this.printButtonValue}>{fillData[i] + " " + descrip[i]}</button>);
         }
-        return <Collapsible
-            trigger={"Filter By " + (this.state.spiritsPicked === true ? "Type" : "Spirit") + " +"}
-            triggerWhenOpen={"Filter By " + (this.state.spiritsPicked === true ? "Type" : "Spirit") + " -"}>
-            {table}
-        </Collapsible>
+
+        if (this.state.spiritsPicked) {
+            return (<Collapsible
+                trigger={"Filter By " + (this.state.spiritsPicked === true ? "Type" : "Spirit") + " +"}
+                triggerWhenOpen={"Filter By " + (this.state.spiritsPicked === true ? "Type" : "Spirit") + " -"}>
+                <button className={this.state.blendedClassname} value="Blended" onClick={this.printButtonValue}>Blended</button>
+
+                <button className={this.state.classicClassname} value="Classic" onClick={this.printButtonValue}>Classic</button>
+
+                <button className={this.state.hotClassname} value="Hot" onClick={this.printButtonValue}>Hot</button>
+
+                <button className={this.state.holidayClassname} value="Holiday" onClick={this.printButtonValue}>Holiday</button>
+
+                <button className={this.state.noveltyClassname} value="Novelty" onClick={this.printButtonValue}>Novelty</button>
+
+                <button className={this.state.shotsClassname} value="Shots" onClick={this.printButtonValue}>Shots</button>
+            </Collapsible>
+            );
+        }
+
+        else if (this.state.typesPicked) {
+            return (
+                <Collapsible
+                    trigger={"Filter By " + (this.state.spiritsPicked === true ? "Type" : "Spirit") + " +"}
+                    triggerWhenOpen={"Filter By " + (this.state.spiritsPicked === true ? "Type" : "Spirit") + " -"}>
+                    <button className={this.state.ginClassname} value="Gin" onClick={this.printButtonValue}>Gin</button>
+
+                    <button className={this.state.rumClassname} value="Rum" onClick={this.printButtonValue}>Rum</button>
+
+                    <button className={this.state.scotchClassname} value="Scotch" onClick={this.printButtonValue}>Scotch</button>
+
+                    <button className={this.state.tequilaClassname} value="Tequila" onClick={this.printButtonValue}>Tequila</button>
+
+                    <button className={this.state.whiskeyClassname} value="Whiskey" onClick={this.printButtonValue}>Whiskey</button>
+
+                    <button className={this.state.vodkaClassname} value="Vodka" onClick={this.printButtonValue}>Vodka</button>
+                </Collapsible>
+            );
+        }
+
+
+
+
     }
 
-
-
-    createDrinkList() {
-
-        let table = []
-
-        let ctr = 0;
+    filterDrinks(){
         const drinkSet =
             [
                 { name: "Manhattan", base_spirit: "bourbon", drink_type: "classic cocktail", img: "manhattan.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
@@ -96,11 +277,36 @@ class Subcategory extends React.Component {
                 { name: "Scotch Sour", base_spirit: "scotch", drink_type: "classic cocktail", img: "scotchsour.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
             ];
 
+            if(this.state.spiritsPicked == true){
+                
+                var filteredSet = drinkSet.filter(drink =>{
+                    var reducedDrink = drink.base_spirit.toLowerCase();
+                    var reducedSub = this.props.match.params.subcategory.toLowerCase();
+                    return reducedDrink.includes(reducedSub, 0);
+                })
+            }
+
+            else if(this.state.typesPicked == true){
+                var filteredSet = drinkSet.filter(drink=>{
+                    var reducedType = drink.drink_type.toLowerCase().split()[0];
+                    var reducedSub = this.props.match.params.subcategory.toLowerCase();
+                    return reducedType.includes(reducedSub, 0)
+                })
+            }
+            console.log(filteredSet);
+            return filteredSet;
+    }
+
+    createDrinkList() {
+
+        let table = []
+
+        let ctr = 0;
+        const drinkSet = this.filterDrinks();
+
         for (let i = 0; i < drinkSet.length / 3; i++) {
             let children = []
             //Inner loop to create children
-            console.log(drinkSet[0].name);
-            console.log(ctr);
             for (let j = 0; j < 3; j++) {
                 if (ctr < drinkSet.length) {
                     children.push(<Card
