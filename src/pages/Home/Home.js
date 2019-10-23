@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Card from "../../components/Cards/Card";
 import './Home.css';
 import Collapsible from "react-collapsible";
+import { Helmet } from "react-helmet";
 
 class Home extends React.Component {
     constructor(props) {
