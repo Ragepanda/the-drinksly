@@ -276,8 +276,10 @@ class Subcategory extends React.Component {
                 { name: "Scotch Sour", base_spirit: "scotch", drink_type: "classic cocktail", img: "scotchsour.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
             ];
 
-        var filteredSet = [];
+
         if (this.state.spiritsPicked == true) {
+            var filteredSet = [];
+            var finalFilter = [];
 
             filteredSet = drinkSet.filter(drink => {
                 var reducedDrink = drink.base_spirit.toLowerCase();
@@ -286,107 +288,188 @@ class Subcategory extends React.Component {
             })
 
             if (this.state.blendedSelected === true) {
-                filteredSet = filteredSet.filter(drink => {
+                var blendedFilter = [];
+                blendedFilter = filteredSet.filter(drink => {
                     var reducedType = drink.drink_type.toLowerCase().split()[0];
                     var filterString = "blended";
                     return reducedType.includes(filterString, 0);
                 })
+                blendedFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
             }
 
+
             if (this.state.classicSelected === true) {
-                filteredSet = filteredSet.filter(drink => {
+                var classicFilter = [];
+                classicFilter = filteredSet.filter(drink => {
                     var reducedType = drink.drink_type.toLowerCase().split()[0];
                     var filterString = "classic";
                     return reducedType.includes(filterString, 0);
                 })
+                classicFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
             }
 
+
             if (this.state.hotSelected === true) {
-                filteredSet = filteredSet.filter(drink => {
+                var hotFilter = [];
+                hotFilter = filteredSet.filter(drink => {
                     var reducedType = drink.drink_type.toLowerCase().split()[0];
                     var filterString = "hot";
                     return reducedType.includes(filterString, 0);
                 })
+                hotFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
             }
 
+
             if (this.state.holidaySelected === true) {
-                filteredSet = filteredSet.filter(drink => {
+                var holidayFilter = [];
+                holidayFilter = filteredSet.filter(drink => {
                     var reducedType = drink.drink_type.toLowerCase().split()[0];
                     var filterString = "holiday";
                     return reducedType.includes(filterString, 0);
                 })
+                holidayFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
             }
 
+
             if (this.state.noveltySelected === true) {
-                filteredSet = filteredSet.filter(drink => {
+                var noveltyFilter = [];
+                noveltyFilter = filteredSet.filter(drink => {
                     var reducedType = drink.drink_type.toLowerCase().split()[0];
                     var filterString = "novelty";
                     return reducedType.includes(filterString, 0);
                 })
+                noveltyFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
             }
 
+
             if (this.state.shotsSelected === true) {
-                filteredSet = filteredSet.filter(drink => {
+                var shotsFilter = [];
+                shotsFilter = filteredSet.filter(drink => {
                     var reducedType = drink.drink_type.toLowerCase().split()[0];
                     var filterString = "shots";
                     return reducedType.includes(filterString, 0);
                 })
+                shotsFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
             }
+
+            if (this.state.shotsSelected === false && this.state.noveltySelected === false && this.state.holidaySelected === false &&
+                this.state.hotSelected === false && this.state.classicSelected === false && this.state.blendedSelected === false) {
+                console.log(filteredSet);
+                return filteredSet;
+            }
+
+            else {
+                return finalFilter;
+            }
+
         }
 
         else if (this.state.typesPicked == true) {
+            var filteredSet = [];
+            var finalFilter = [];
             var filteredSet = drinkSet.filter(drink => {
                 var reducedType = drink.drink_type.toLowerCase().split()[0];
                 var reducedSub = this.props.match.params.subcategory.toLowerCase();
                 return reducedType.includes(reducedSub, 0)
             })
 
-            if (this.state.ginSelected === true) {
-                filteredSet = filteredSet.filter(drink => {
-                    var reducedType = drink.drink_type.toLowerCase().split()[0];
-                    var filterString = "gin";
-                    return reducedType.includes(filterString, 0);
-                })
-            }
-
             if (this.state.rumSelected === true) {
-                filteredSet = filteredSet.filter(drink => {
-                    var reducedType = drink.drink_type.toLowerCase().split()[0];
+                var rumFilter = [];
+                rumFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
                     var filterString = "rum";
                     return reducedType.includes(filterString, 0);
                 })
+                rumFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
             }
 
+
+            if (this.state.ginSelected === true) {
+                var ginFilter = [];
+                ginFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                    var filterString = "gin";
+                    return reducedType.includes(filterString, 0);
+                })
+                ginFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+
             if (this.state.scotchSelected === true) {
-                filteredSet = filteredSet.filter(drink => {
-                    var reducedType = drink.drink_type.toLowerCase().split()[0];
+                var scotchFilter = [];
+                scotchFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
                     var filterString = "scotch";
                     return reducedType.includes(filterString, 0);
                 })
+                scotchFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
             }
 
+
             if (this.state.tequilaSelected === true) {
-                filteredSet = filteredSet.filter(drink => {
-                    var reducedType = drink.drink_type.toLowerCase().split()[0];
+                var tequilaFilter = [];
+                tequilaFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
                     var filterString = "tequila";
                     return reducedType.includes(filterString, 0);
                 })
-            }
-
-            if (this.state.whiskeySelected === true) {
-                filteredSet = filteredSet.filter(drink => {
-                    var reducedType = drink.drink_type.toLowerCase().split()[0];
-                    var filterString = "whiskey";
-                    return reducedType.includes(filterString, 0);
+                tequilaFilter.forEach(object =>{
+                    finalFilter.push(object);
                 })
             }
 
+
             if (this.state.vodkaSelected === true) {
-                filteredSet = filteredSet.filter(drink => {
-                    var reducedType = drink.drink_type.toLowerCase().split()[0];
+                var vodkaFilter = [];
+                vodkaFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
                     var filterString = "vodka";
                     return reducedType.includes(filterString, 0);
                 })
+                vodkaFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+
+            if (this.state.whiskeySelected === true) {
+                var whiskeyFilter = [];
+                whiskeyFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                    var filterString = "whiskey";
+                    return reducedType.includes(filterString, 0);
+                })
+                whiskeyFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+            if (this.state.ginSelected === false && this.state.rumSelected === false && this.state.tequilaSelected === false &&
+                this.state.scotchSelected === false && this.state.vodkaSelected === false && this.state.blendedSelected === false) {
+                console.log(filteredSet);
+                return filteredSet;
+            }
+
+            else {
+                return finalFilter;
             }
         }
         console.log(filteredSet);
