@@ -1,8 +1,8 @@
 import React from "react";
 import Card from "../../components/Cards/Card";
 import Collapsible from "react-collapsible";
-import "./Subcategory.css"
-
+import "./Subcategory.css";
+import { Helmet } from "react-helmet";
 // import './Subcategory.css';
 class Subcategory extends React.Component {
     constructor(props) {

@@ -1,7 +1,7 @@
 import React from "react";
 
-import './Drink.css'
-
+import './Drink.css';
+import { Helmet } from "react-helmet";
 // import './Drink.css';
 class Drink extends React.Component {
     constructor(props) {
