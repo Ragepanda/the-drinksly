@@ -1,15 +1,10 @@
-#recipeBox{
-	background-color: black;
+#recipe-box{
+	background: #130E0D;
 	color: white;
 	font-family: 'Raleway', sans-serif;
 	
 }
 
-#drinkImg{
-
-	padding-top: 20px;
-	padding-bottom: 18px;
-}
 
 #title{
 	font-size: 30px;
@@ -20,14 +15,15 @@
 	
 }
 
-#imgBox{
-	background-color: black; 
+.drink-img{
+	width: 100%;
+	height: auto;
+	padding-bottom:20px;
 }
 
 .center {
-  margin: auto;
-  width: 80%;
-  padding: 10px;
+	padding-top:15px;
+  text-align: center;
 }
 
 .padded{
