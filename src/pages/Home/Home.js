@@ -338,8 +338,8 @@ class Home extends React.Component {
             <div>
                 <Helmet>
                   <title>{"The Drinksly" + " | "+ "Drink Recipes"}</title>
-                  <meta name="description" content={"The Drinksly is the best website for drink recipes, mixed drink recipes, and non-alcoholic drink recipes."}/>
-                  <meta name="keywords" content={"drink, recipe, recipes, cocktail, cocktails, vodka, whiskey, gin, rum, tequila, scotch, non-alcoholic, mixed"} />
+                  <meta name="description" content="The Drinksly is the best website for drink recipes, mixed drink recipes, and non-alcoholic drink recipes."/>
+                  <meta name="keywords" content="drink, drinks, recipe, recipes, cocktail, cocktails, vodka, whiskey, gin, rum, tequila, scotch, non-alcoholic, mixed, spirit, spirits"/>
                   <meta name="author" content="thedrinksly.com"/>
                   <meta http-equiv="Content-Language" content="en-US"/>
                   <meta name="rating" content="adults"/>

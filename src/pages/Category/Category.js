@@ -16,13 +16,13 @@ class Category extends React.Component {
 
     createHelmet(){
 
-        let title = this.props.match.params.category == "spirits" ? "Spirits | Cocktail Recipes by Spirits" : "Cocktail Type | Cocktail Recipes by Cocktail Type";
-        let descrip = this.props.match.params.category == "spirits" ? "Here you can select the type of cocktail recipe you want based on the spirit you are interested in." : "Here you can select the type of cocktail recipe you want based on the type of cocktail you are interested in.";
+        let metatitle = this.props.match.params.category == "spirits" ? "Spirits | Drink Recipes by Spirits" : "Drink Type | Drink Recipes by Drink Type";
+        let descrip = this.props.match.params.category == "spirits" ? "Here you can select the type of drink recipe you want based on the spirit you are interested in." : "Here you can select the type of drink recipe you want based on the type of drink you are interested in.";
 
         let helmet = <Helmet>
-            <title>{title}</title>
+            <title>{metatitle}</title>
             <meta name="description" content={descrip}/>
-            <meta name="keywords" content={"drink, recipe, recipes, cocktail, cocktails, vodka, whiskey, gin, rum, tequila, scotch, non-alcoholic, mixed"} />
+            <meta name="keywords" content={"drink, drinks, recipe, recipes, cocktail, cocktails, vodka, whiskey, gin, rum, tequila, scotch, mixed, spirit, spirits"} />
             <meta name="author" content="thedrinksly.com"/>
             <meta http-equiv="Content-Language" content="en-US"/>
             <meta name="rating" content="adults"/>
