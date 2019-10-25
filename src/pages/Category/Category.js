@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../../components/Cards/Card.js";
+import { Helmet } from "react-helmet";
 
 class Category extends React.Component {
     constructor(props) {
@@ -12,6 +13,24 @@ class Category extends React.Component {
             console.log(this.props);
         }
 
+
+    createHelmet(){
+
+        let metatitle = this.props.match.params.category == "spirits" ? "Spirits | Drink Recipes by Spirits" : "Drink Type | Drink Recipes by Drink Type";
+        let descrip = this.props.match.params.category == "spirits" ? "Here you can select the type of drink recipe you want based on the spirit you are interested in." : "Here you can select the type of drink recipe you want based on the type of drink you are interested in.";
+
+        let helmet = <Helmet>
+            <title>{metatitle}</title>
+            <meta name="description" content={descrip}/>
+            <meta name="keywords" content={"drink, drinks, recipe, recipes, cocktail, cocktails, vodka, whiskey, gin, rum, tequila, scotch, mixed, spirit, spirits"} />
+            <meta name="author" content="thedrinksly.com"/>
+            <meta http-equiv="Content-Language" content="en-US"/>
+            <meta name="rating" content="adults"/>
+            <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
+            </Helmet>;
+
+        return helmet;
+    }
 
     createTable = () => {
 
@@ -44,13 +63,16 @@ class Category extends React.Component {
             //Create the parent and add the children
             table.push(<div className="row no-collapse-1">{children}</div>)
         }
-        return table
+        return table;
     }
+
+
 
 
    render() {
         return (
             <div className="wrapper style1">
+            {this.createHelmet()}
                     <div className="container 4u" id="title-box">
                         <section>
                             <header className="major">
