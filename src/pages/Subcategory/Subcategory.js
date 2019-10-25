@@ -153,35 +153,34 @@ class Subcategory extends React.Component {
             case "Holiday":
 
                 if (this.state.holidaySelected === false) {
-                    this.setState({holidaySelected: true});
+                    this.setState({ holidaySelected: true });
                     this.setState({ holidayClassname: "button small 2u selectedFilter" });
                 }
                 else {
-                    this.setState({holidaySelected: false});
+                    this.setState({ holidaySelected: false });
                     this.setState({ holidayClassname: "button small 2u" });
-                    break;
-                } 
+                }
+                break;
 
             case "Novelty":
 
                 if (this.state.noveltySelected === false) {
-                    this.setState({noveltySelected: true});
+                    this.setState({ noveltySelected: true });
                     this.setState({ noveltyClassname: "button small 2u selectedFilter" });
                 }
                 else {
-                    this.setState({noveltySelected: false});
+                    this.setState({ noveltySelected: false });
                     this.setState({ noveltyClassname: "button small 2u" });
-                    break;
-                } 
-
+                }
+                break;
             case "Shots":
 
                 if (this.state.shotsSelected === false) {
-                    this.setState({shotsSelected: true});
+                    this.setState({ shotsSelected: true });
                     this.setState({ shotsClassname: "button small 2u selectedFilter" });
                 }
                 else {
-                    this.setState({shotsSelected: false});
+                    this.setState({ shotsSelected: false });
                     this.setState({ shotsClassname: "button small 2u" });
                 }
                 break;
@@ -262,39 +261,219 @@ class Subcategory extends React.Component {
 
     }
 
-    filterDrinks(){
+    filterDrinks() {
         const drinkSet =
             [
-                { name: "Manhattan", base_spirit: "bourbon", drink_type: "classic cocktail", img: "manhattan.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+                { name: "Manhattan", base_spirit: "whiskey", drink_type: "classic cocktail", img: "manhattan.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
                 { name: "Mojito", base_spirit: "rum", drink_type: "classic cocktail", img: "mojito.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 2 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
                 { name: "Gin Fizz", base_spirit: "gin", drink_type: "classic cocktail", img: "gin-fizz.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 3 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
                 { name: "Pina Colada", base_spirit: "rum", drink_type: "blended cocktail", img: "pina-colada.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 4 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-                { name: "Hot Toddy", base_spirit: "bourbon", drink_type: "hot cocktail", img: "hot-toddy.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 5 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+                { name: "Hot Toddy", base_spirit: "whiskey", drink_type: "hot cocktail", img: "hot-toddy.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 5 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
                 { name: "B-52", base_spirit: "coffee liquor", drink_type: "shots", img: "b-52.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 6 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-                { name: "Eggnog", base_spirit: "bourbon", drink_type: "holiday cocktail", img: "eggnog.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+                { name: "Eggnog", base_spirit: "whiskey", drink_type: "holiday cocktail", img: "eggnog.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
                 { name: "Jello Shots", base_spirit: "vodka", drink_type: "novelty cocktail", img: "jelloshot.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
                 { name: "Margarita", base_spirit: "tequila", drink_type: "blended cocktail", img: "margarita.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
                 { name: "Scotch Sour", base_spirit: "scotch", drink_type: "classic cocktail", img: "scotchsour.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
             ];
 
-            if(this.state.spiritsPicked == true){
-                
-                var filteredSet = drinkSet.filter(drink =>{
-                    var reducedDrink = drink.base_spirit.toLowerCase();
-                    var reducedSub = this.props.match.params.subcategory.toLowerCase();
-                    return reducedDrink.includes(reducedSub, 0);
+
+        if (this.state.spiritsPicked == true) {
+            var filteredSet = [];
+            var finalFilter = [];
+
+            filteredSet = drinkSet.filter(drink => {
+                var reducedDrink = drink.base_spirit.toLowerCase();
+                var reducedSub = this.props.match.params.subcategory.toLowerCase();
+                return reducedDrink.includes(reducedSub, 0);
+            })
+
+            if (this.state.blendedSelected === true) {
+                var blendedFilter = [];
+                blendedFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.drink_type.toLowerCase().split()[0];
+                    var filterString = "blended";
+                    return reducedType.includes(filterString, 0);
+                })
+                blendedFilter.forEach(object =>{
+                    finalFilter.push(object);
                 })
             }
 
-            else if(this.state.typesPicked == true){
-                var filteredSet = drinkSet.filter(drink=>{
+
+            if (this.state.classicSelected === true) {
+                var classicFilter = [];
+                classicFilter = filteredSet.filter(drink => {
                     var reducedType = drink.drink_type.toLowerCase().split()[0];
-                    var reducedSub = this.props.match.params.subcategory.toLowerCase();
-                    return reducedType.includes(reducedSub, 0)
+                    var filterString = "classic";
+                    return reducedType.includes(filterString, 0);
+                })
+                classicFilter.forEach(object =>{
+                    finalFilter.push(object);
                 })
             }
-            console.log(filteredSet);
-            return filteredSet;
+
+
+            if (this.state.hotSelected === true) {
+                var hotFilter = [];
+                hotFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.drink_type.toLowerCase().split()[0];
+                    var filterString = "hot";
+                    return reducedType.includes(filterString, 0);
+                })
+                hotFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+
+            if (this.state.holidaySelected === true) {
+                var holidayFilter = [];
+                holidayFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.drink_type.toLowerCase().split()[0];
+                    var filterString = "holiday";
+                    return reducedType.includes(filterString, 0);
+                })
+                holidayFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+
+            if (this.state.noveltySelected === true) {
+                var noveltyFilter = [];
+                noveltyFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.drink_type.toLowerCase().split()[0];
+                    var filterString = "novelty";
+                    return reducedType.includes(filterString, 0);
+                })
+                noveltyFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+
+            if (this.state.shotsSelected === true) {
+                var shotsFilter = [];
+                shotsFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.drink_type.toLowerCase().split()[0];
+                    var filterString = "shots";
+                    return reducedType.includes(filterString, 0);
+                })
+                shotsFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+            if (this.state.shotsSelected === false && this.state.noveltySelected === false && this.state.holidaySelected === false &&
+                this.state.hotSelected === false && this.state.classicSelected === false && this.state.blendedSelected === false) {
+                console.log(filteredSet);
+                return filteredSet;
+            }
+
+            else {
+                return finalFilter;
+            }
+
+        }
+
+        else if (this.state.typesPicked == true) {
+            var filteredSet = [];
+            var finalFilter = [];
+            var filteredSet = drinkSet.filter(drink => {
+                var reducedType = drink.drink_type.toLowerCase().split()[0];
+                var reducedSub = this.props.match.params.subcategory.toLowerCase();
+                return reducedType.includes(reducedSub, 0)
+            })
+
+            if (this.state.rumSelected === true) {
+                var rumFilter = [];
+                rumFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                    var filterString = "rum";
+                    return reducedType.includes(filterString, 0);
+                })
+                rumFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+
+            if (this.state.ginSelected === true) {
+                var ginFilter = [];
+                ginFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                    var filterString = "gin";
+                    return reducedType.includes(filterString, 0);
+                })
+                ginFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+
+            if (this.state.scotchSelected === true) {
+                var scotchFilter = [];
+                scotchFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                    var filterString = "scotch";
+                    return reducedType.includes(filterString, 0);
+                })
+                scotchFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+
+            if (this.state.tequilaSelected === true) {
+                var tequilaFilter = [];
+                tequilaFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                    var filterString = "tequila";
+                    return reducedType.includes(filterString, 0);
+                })
+                tequilaFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+
+            if (this.state.vodkaSelected === true) {
+                var vodkaFilter = [];
+                vodkaFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                    var filterString = "vodka";
+                    return reducedType.includes(filterString, 0);
+                })
+                vodkaFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+
+            if (this.state.whiskeySelected === true) {
+                var whiskeyFilter = [];
+                whiskeyFilter = filteredSet.filter(drink => {
+                    var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                    var filterString = "whiskey";
+                    return reducedType.includes(filterString, 0);
+                })
+                whiskeyFilter.forEach(object =>{
+                    finalFilter.push(object);
+                })
+            }
+
+            if (this.state.ginSelected === false && this.state.rumSelected === false && this.state.tequilaSelected === false &&
+                this.state.scotchSelected === false && this.state.vodkaSelected === false && this.state.blendedSelected === false) {
+                console.log(filteredSet);
+                return filteredSet;
+            }
+
+            else {
+                return finalFilter;
+            }
+        }
+        console.log(filteredSet);
+        return filteredSet;
     }
 
     createDrinkList() {
@@ -311,7 +490,7 @@ class Subcategory extends React.Component {
                 if (ctr < drinkSet.length) {
                     children.push(<Card
                         route={"/drinks/" + drinkSet[ctr].name}
-                        image_src={drinkSet[ctr].img}
+                        image_src={"../../public/images/alcoholic_drinks/"+drinkSet[ctr].base_spirit+"_drinks/"+drinkSet[ctr].img}
                         title={drinkSet[ctr].name}
                     />);
                 }
