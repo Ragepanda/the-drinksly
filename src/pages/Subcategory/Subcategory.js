@@ -1,8 +1,8 @@
 import React from "react";
 import Card from "../../components/Cards/Card";
 import Collapsible from "react-collapsible";
-import "./Subcategory.css"
-
+import "./Subcategory.css";
+import { Helmet } from "react-helmet";
 // import './Subcategory.css';
 class Subcategory extends React.Component {
     constructor(props) {
@@ -188,8 +188,26 @@ class Subcategory extends React.Component {
         }
     }
 
-    createTable = () => {
+    createHelmet(){
 
+        let metatitle = this.props.match.params.subcategory + " Drinks | " + this.props.match.params.subcategory + " Drink Recipes";
+        let descrip = "This list of " + this.props.match.params.subcategory + " drinks is a list of all " + this.props.match.params.subcategory + " drink recipes we have. Please select the " + this.props.match.params.subcategory+ " drink recipe you are interested in making.";
+        let metacontent = this.props.match.params.category == "spirits" ? "drink, drinks, recipe, recipes, cocktail, cocktails, mixed, spirit, spirits, " + this.props.match.params.subcategory : "drink, drinks, recipe, recipes, cocktail, cocktails, vodka, whiskey, gin, rum, tequila, scotch, mixed, spirit, spirits, " + this.props.match.params.subcategory;
+
+        let helmet = <Helmet>
+            <title>{metatitle}</title>
+            <meta name="description" content={descrip}/>
+            <meta name="keywords" content={metacontent} />
+            <meta name="author" content="thedrinksly.com"/>
+            <meta http-equiv="Content-Language" content="en-US"/>
+            <meta name="rating" content="adults"/>
+            <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
+            </Helmet>;
+
+        return helmet;
+    }
+
+    createTable = () => {
         const drinks = ["Gin", "Rum", "Scotch", "Tequila", "Vodka", "Whiskey"];
         const types = ["Blended", "Classic", "Hot", "Holiday", "Novelty", "Shots"];
 
@@ -504,6 +522,7 @@ class Subcategory extends React.Component {
     render() {
         return (
             <div className="wrapper style1">
+            {this.createHelmet()}
                 <div className="container 4u" id="title-box">
                     <section>
                         <header className="major">

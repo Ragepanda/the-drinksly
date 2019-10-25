@@ -1,7 +1,7 @@
 import React from "react";
 
-import './Drink.css'
-
+import './Drink.css';
+import { Helmet } from "react-helmet";
 // import './Drink.css';
 class Drink extends React.Component {
   constructor(props) {
@@ -146,6 +146,15 @@ class Drink extends React.Component {
 
     return (
       <div>
+      	<Helmet>
+      	  <title>{"Drink Recipe" + " | "+ info.name +" Drink Recipe"}</title>
+      	  <meta name="description" content={"This Drink Recipe page is perfect to understand and make the " + info.name + " drink recipe. Please enjoy using and drinking our " + info.name + " drink recipe." }/>
+      	  <meta name="keywords" content={"drink, recipe, recipes, cocktail, cocktails, vodka, whiskey, gin, rum, tequila, scotch, non-alcoholic, mixed, spirit, spirits, " + info.name} />
+      	  <meta name="author" content="thedrinksly.com"/>
+      	  <meta http-equiv="Content-Language" content="en-US"/>
+      	  <meta name="rating" content="adults"/>
+      	  <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
+      	</Helmet>
         <div className="wrapper style1">
           <div className="container" id="recipe-box">
             <section>
