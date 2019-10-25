@@ -86,6 +86,98 @@ class Home extends React.Component {
             var reducedName = drink.name.toLowerCase();
             return reducedName.includes(this.state.searchText.toLowerCase(), 0);
         })
+
+        var spiritFilter = [];
+        var typeFilter = [];
+
+        if (this.state.rumToggle === true) {
+            var rumFilter = [];
+            rumFilter = subset.filter(drink => {
+                var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                var filterString = "rum";
+                return reducedType.includes(filterString, 0);
+            })
+            rumFilter.forEach(object =>{
+                spiritFilter.push(object);
+            })
+        }
+
+
+        if (this.state.ginToggle === true) {
+            var ginFilter = [];
+            ginFilter = subset.filter(drink => {
+                var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                var filterString = "gin";
+                return reducedType.includes(filterString, 0);
+            })
+            ginFilter.forEach(object =>{
+                spiritFilter.push(object);
+            })
+        }
+
+
+        if (this.state.scotchToggle === true) {
+            var scotchFilter = [];
+            scotchFilter = subset.filter(drink => {
+                var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                var filterString = "scotch";
+                return reducedType.includes(filterString, 0);
+            })
+            scotchFilter.forEach(object =>{
+                spiritFilter.push(object);
+            })
+        }
+
+
+        if (this.state.tequilaToggle === true) {
+            var tequilaFilter = [];
+            tequilaFilter = subset.filter(drink => {
+                var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                var filterString = "tequila";
+                return reducedType.includes(filterString, 0);
+            })
+            tequilaFilter.forEach(object =>{
+                spiritFilter.push(object);
+            })
+        }
+
+
+        if (this.state.vodkaToggle === true) {
+            var vodkaFilter = [];
+            vodkaFilter = subset.filter(drink => {
+                var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                var filterString = "vodka";
+                return reducedType.includes(filterString, 0);
+            })
+            vodkaFilter.forEach(object =>{
+                spiritFilter.push(object);
+            })
+        }
+
+
+        if (this.state.whiskeyToggle === true) {
+            var whiskeyFilter = [];
+            whiskeyFilter = subset.filter(drink => {
+                var reducedType = drink.base_spirit.toLowerCase().split()[0];
+                var filterString = "whiskey";
+                return reducedType.includes(filterString, 0);
+            })
+            whiskeyFilter.forEach(object =>{
+                spiritFilter.push(object);
+            })
+        }
+
+        if (this.state.ginToggle === false && this.state.rumToggle === false && this.state.tequilaToggle === false &&
+            this.state.scotchToggle === false && this.state.vodkaToggle === false && this.state.blendedToggle === false) {
+            console.log(spiritFilter);
+            return subset;
+        }
+
+        else {
+            return spiritFilter;
+        }
+
+    
         return subset;
     }
 
@@ -320,7 +412,7 @@ class Home extends React.Component {
         for (var j = 0; j < 3 && ctr < drinkSet.length; j++) {
             children.push(<Card
                     route = {"/"+drinkSet[ctr].base_spirit+"/"+drinkSet[ctr].name}
-                    image_src = {"../../images/alcoholic_drinks/"+drinkSet[ctr].base_spirit+"_drinks/"+drinkSet[ctr].img}
+                    image_src = {"../../images/alcoholic_drinks/whiskey_drinks/drew-beamer-manhattan-54.jpg"}
                     title = {drinkSet[ctr].name}
                 />);
             
