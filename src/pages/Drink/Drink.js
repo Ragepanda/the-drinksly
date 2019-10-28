@@ -17,10 +17,8 @@ class Drink extends React.Component {
   }
 
 
-<<<<<<< HEAD
-      
-    render() {
-       const drink = 
+  render() {
+    const drink = 
 [
   {name: "Manhattan",            base_spirit: "whiskey",   drink_type: "classic cocktail", img: "drew-beamer-manhattan-small.jpg", description: "The Manhattan is a classic whiskey cocktail devised in NYC's Manhattan Club.",                              recipe: ["2 oz Bourbon", "1 oz Sweet Vermouth", "2 dashes Angostura Bitters", <br/>, "Add all ingredients to a mixing glass with ice", "Stir until chilled", "Strain into another glass", "Garnish with a cherry"]},
   {name: "Old Fashioned",        base_spirit: "whiskey",   drink_type: "classic cocktail", img: "old-fashioned.jpg",               description: "The Old Fashioned is a classic whiskey cocktail with just a few simple ingredients.",                       recipe: ["2 oz Bourbon", "1 tsp water", "3 dashes Angostura Bitters", "1/2 tsp sugar", <br/>, "Add sugar, bitters, and water into a rocks glass and stir until sugar is dissolved", "Pour in the bourbon and a few ice cubes", "Gently stir", "Garnish with an orange peel"]},
@@ -76,60 +74,6 @@ class Drink extends React.Component {
 
 
 ]
-        var info;
-        for(var i =0; i < drink.length; i++)
-        {
-          if(this.props.match.params.drink == drink[i].name)
-          {
-            info = drink[i];
-            break;
-          }
-        }
-
-        const recipe = info.recipe.map((item) =>
-            <li>{item}</li>
-        );
-
-        //console.log("images/alcoholic_drinks/"+info.base_spirit+"_drinks/"+info.img);
-
-        return (
-          <div>
-            <div className="wrapper style1">
-           
-              <div className = "row center">
-              <div className="major 6u" id="imgBox">
-                <img id="drinkImg" src={"../../images/alcoholic_drinks/"+info.base_spirit+"_drinks/"+info.img}/>
-              </div>
-              <div className="major 6u" id="recipeBox">
-                <h3 className="center" id="title">{info.name}</h3>
-                <br/>
-                <p>Description</p>
-                <br/>
-                <p className="padded">{info.description}</p>
-                <br/>
-                <p>Ingredients</p>
-                <br/>
-                <ul>
-                  {recipe}
-                </ul>
-                <br/>
-=======
-  render() {
-    const drink =
-      [
-        { name: "Manhattan", base_spirit: "whiskey", drink_type: "classic cocktail", img: "drew-beamer-manhattan-55.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: ["Ingredient 1", "Ingredient 2", "Sin", "Lust", "Sloth", "Racism", <br />, "step 1 shake", "step 2 mix", "More steps", "even more steps", "a fucking drink shouldn't be this complicated"] },
-        { name: "Mojito", base_spirit: "rum", drink_type: "classic cocktail", img: "mojito.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 2 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-        { name: "Gin Fizz", base_spirit: "gin", drink_type: "classic cocktail", img: "gin-fizz.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 3 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-        { name: "Pina Colada", base_spirit: "rum", drink_type: "blended cocktail", img: "pina-colada.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 4 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-        { name: "Hot Toddy", base_spirit: "whiskey", drink_type: "hot cocktail", img: "hot-toddy.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 5 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-        { name: "B-52", base_spirit: "coffee liquor", drink_type: "shots", img: "b-52.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 6 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-        { name: "Eggnog", base_spirit: "whiskey", drink_type: "holiday cocktail", img: "eggnog.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-        { name: "Jello Shots", base_spirit: "vodka", drink_type: "novelty cocktail", img: "jelloshot.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-        { name: "Margarita", base_spirit: "tequila", drink_type: "blended cocktail", img: "margarita.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-        { name: "Scotch Sour", base_spirit: "scotch", drink_type: "classic cocktail", img: "scotchsour.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-
-
-      ]
     var info;
     for (var i = 0; i < drink.length; i++) {
       if (this.props.match.params.drink == drink[i].name) {
@@ -165,7 +109,6 @@ class Drink extends React.Component {
               <div className="row">
                 <div className="major 4u">
                   <img className="drink-img" src={"../../images/alcoholic_drinks/" + info.base_spirit + "_drinks/" + info.img} />
->>>>>>> d3ccd2e48b033fd1f6495325805a9be44d064831
                 </div>
                 <div className="major 8u">
                   <p>{info.description}</p>

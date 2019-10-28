@@ -2,7 +2,7 @@
 	background: #130E0D;
 	color: white;
 	font-family: 'Raleway', sans-serif;
-	
+	border-radius: 25px
 }
 
 
@@ -19,6 +19,7 @@
 	width: 100%;
 	height: auto;
 	padding-bottom:20px;
+	border-radius: 25px;
 }
 
 .center {
