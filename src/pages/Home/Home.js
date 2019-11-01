@@ -5,7 +5,6 @@ import Card from "../../components/Cards/Card";
 import './Home.css';
 import Collapsible from "react-collapsible";
 import { Helmet } from "react-helmet";
-
 class Home extends React.Component {
     constructor(props) {
         super(props); // ✅ We passed props
