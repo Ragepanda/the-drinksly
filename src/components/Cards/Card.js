@@ -5,13 +5,11 @@ import './Card.css';
 class Card extends React.Component {
 	constructor(props) {
         super(props); // ✅ We passed props
-        console.log(props);      // ✅ {}
-        console.log(this.props); // ✅ {}
       }
 
 	render()
 	{
-		console.log(this.props);
+
 		return (
 				<div className="4u">
 					<div className="card">

@@ -18,6 +18,14 @@ img{
     color:#130E0D
 }
 
+#search-box .card .boxcard{
+    background-color: #462C1A;
+    color: white
+}
+#search-box .card:hover .boxcard{
+    filter: brightness(180%);
+}
+
 #home-form{
     text-align: center;
     display: block;
