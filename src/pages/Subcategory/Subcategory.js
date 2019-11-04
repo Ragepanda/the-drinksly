@@ -3,6 +3,7 @@ import Card from "../../components/Cards/Card";
 import Collapsible from "react-collapsible";
 import "./Subcategory.css";
 import { Helmet } from "react-helmet";
+import Drinks from "../Drink/drinkobj.json";
 // import './Subcategory.css';
 class Subcategory extends React.Component {
     constructor(props) {
@@ -280,19 +281,7 @@ class Subcategory extends React.Component {
     }
 
     filterDrinks() {
-        const drinkSet =
-            [
-                { name: "Manhattan", base_spirit: "whiskey", drink_type: "classic cocktail", img: "manhattan.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-                { name: "Mojito", base_spirit: "rum", drink_type: "classic cocktail", img: "mojito.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 2 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-                { name: "Gin Fizz", base_spirit: "gin", drink_type: "classic cocktail", img: "gin-fizz.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 3 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-                { name: "Pina Colada", base_spirit: "rum", drink_type: "blended cocktail", img: "pina-colada.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 4 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-                { name: "Hot Toddy", base_spirit: "whiskey", drink_type: "hot cocktail", img: "hot-toddy.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 5 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-                { name: "B-52", base_spirit: "coffee liquor", drink_type: "shots", img: "b-52.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 6 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-                { name: "Eggnog", base_spirit: "whiskey", drink_type: "holiday cocktail", img: "eggnog.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-                { name: "Jello Shots", base_spirit: "vodka", drink_type: "novelty cocktail", img: "jelloshot.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-                { name: "Margarita", base_spirit: "tequila", drink_type: "blended cocktail", img: "margarita.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-                { name: "Scotch Sour", base_spirit: "scotch", drink_type: "classic cocktail", img: "scotchsour.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", recipe: "Recipe 1 consectetur adipiscing elit, 1 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-            ];
+        const drinkSet = Drinks;
 
 
         if (this.state.spiritsPicked == true) {
@@ -508,7 +497,7 @@ class Subcategory extends React.Component {
                 if (ctr < drinkSet.length) {
                     children.push(<Card
                         route={"/drinks/" + drinkSet[ctr].name}
-                        image_src={"../../public/images/alcoholic_drinks/"+drinkSet[ctr].base_spirit+"_drinks/"+drinkSet[ctr].img}
+                        image_src={"../../images/alcoholic_drinks/"+drinkSet[ctr].base_spirit +"_drinks/"+drinkSet[ctr].img}
                         title={drinkSet[ctr].name}
                     />);
                 }

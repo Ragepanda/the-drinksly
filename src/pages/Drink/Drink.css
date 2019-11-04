@@ -5,8 +5,8 @@
 	border-radius: 25px
 }
 
-#steps-box{
-	padding-left:10px;
+#list-rows{
+	margin-left: -60px;
 }
 #title{
 	font-size: 30px;

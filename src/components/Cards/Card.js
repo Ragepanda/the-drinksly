@@ -5,6 +5,7 @@ import './Card.css';
 class Card extends React.Component {
 	constructor(props) {
         super(props); // ✅ We passed props
+   
       }
 
 	render()

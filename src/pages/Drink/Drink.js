@@ -118,7 +118,7 @@ class Drink extends React.Component {
                     <p><a className="attribution" href="#">Author/Creator</a></p>
                   </div>
                 </div>
-                <div className="major 8u">
+                <div className="major 8u" id="drink-text">
                   <div className="row">
                     <div className="12u">
                       <header className="major">
@@ -127,8 +127,8 @@ class Drink extends React.Component {
                       <p>{info.description}</p>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="6u">
+                  <div className="row" id="list-rows">
+                    <div className="6u" id="ingredients-box">
                       <header className="major">
                         <h3>{info.name} Ingredients</h3>
                       </header>
@@ -137,7 +137,7 @@ class Drink extends React.Component {
                       </ul>
                     </div>
 
-                    <div className="6u" id="steps-box">
+                    <div className= "6u" id="steps-box">
                       <header className="major">
                         <h3>{info.name} Recipe</h3>
                       </header>

@@ -5,7 +5,8 @@ import Card from "../../components/Cards/Card";
 import './Home.css';
 import Collapsible from "react-collapsible";
 import { Helmet } from "react-helmet";
-import Drinks from "../Drink/drinkobj.json"
+import Drinks from "../Drink/drinkobj.json";
+
 class Home extends React.Component {
     constructor(props) {
         super(props); // ✅ We passed props
@@ -191,7 +192,7 @@ class Home extends React.Component {
             hotFilter = subset.filter(drink => {
                 var reducedType = drink.drink_type.toLowerCase().split()[0];
                 var filterString = "hot";
-                return reducedType.includes(filterString, 0);
+                return reducedType === "hot cocktail";
             })
             hotFilter.forEach(object => {
                 typeFilter.push(object);
@@ -230,7 +231,7 @@ class Home extends React.Component {
             shotsFilter = subset.filter(drink => {
                 var reducedType = drink.drink_type.toLowerCase().split()[0];
                 var filterString = "shots";
-                return reducedType.includes(filterString, 0);
+                return reducedType==="shot";
             })
             shotsFilter.forEach(object => {
                 typeFilter.push(object);
@@ -521,7 +522,7 @@ class Home extends React.Component {
             for (var j = 0; j < 3 && ctr < drinkSet.length; j++) {
                 children.push(<Card
                     route={"/drinks/" + drinkSet[ctr].name}
-                    image_src={"../../images/alcoholic_drinks/" + drinkSet[ctr].base_spirit + "_drinks/" + drinkSet[ctr].img}
+                    image_src={"../../images/alcoholic_drinks/"+drinkSet[ctr].base_spirit +"_drinks/"+drinkSet[ctr].img}
                     title={drinkSet[ctr].name}
                     className="search-card"
                 />);
