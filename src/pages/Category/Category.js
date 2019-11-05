@@ -3,21 +3,11 @@ import Card from "../../components/Cards/Card.js";
 import { Helmet } from "react-helmet";
 
 class Category extends React.Component {
-    constructor(props) {
-        super(props);
-        console.log(props);
-        console.log(this.props);
-    }
-
-        componentDidMount(){
-            console.log(this.props);
-        }
-
 
     createHelmet(){
 
-        let metatitle = this.props.match.params.category == "spirits" ? "Spirits | Drink Recipes by Spirits" : "Drink Type | Drink Recipes by Drink Type";
-        let descrip = this.props.match.params.category == "spirits" ? "Here you can select the type of drink recipe you want based on the spirit you are interested in." : "Here you can select the type of drink recipe you want based on the type of drink you are interested in.";
+        let metatitle = this.props.match.params.category === "spirits" ? "Spirits | Drink Recipes by Spirits" : "Drink Type | Drink Recipes by Drink Type";
+        let descrip = this.props.match.params.category === "spirits" ? "Here you can select the type of drink recipe you want based on the spirit you are interested in." : "Here you can select the type of drink recipe you want based on the type of drink you are interested in.";
 
         let helmet = <Helmet>
             <title>{metatitle}</title>
@@ -40,8 +30,8 @@ class Category extends React.Component {
         const drinkRoute = ["Drinks", "Drinks", "Drinks", "Drinks" ,"Drinks", "Drinks"]
         const typeRoute = ["Cocktails", "Cocktails" ,"Cocktails", "Cocktails", "Cocktails", ""]
 
-        let descrip = this.props.match.params.category == "spirits" ? drinkRoute : typeRoute;
-        let fillData = this.props.match.params.category == "spirits" ? drinks : types;
+        let descrip = this.props.match.params.category === "spirits" ? drinkRoute : typeRoute;
+        let fillData = this.props.match.params.category === "spirits" ? drinks : types;
 
 
         let table = []

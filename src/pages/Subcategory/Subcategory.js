@@ -49,6 +49,8 @@ class Subcategory extends React.Component {
 
     printButtonValue(e) {
         switch (e.target.value) {
+            default: 
+                break;
             case "Gin":
                 if (this.state.ginSelected == false) {
                     this.setState({ ginSelected: true });
@@ -373,7 +375,6 @@ class Subcategory extends React.Component {
 
             if (this.state.shotsSelected === false && this.state.noveltySelected === false && this.state.holidaySelected === false &&
                 this.state.hotSelected === false && this.state.classicSelected === false && this.state.blendedSelected === false) {
-                console.log(filteredSet);
                 return filteredSet;
             }
 
@@ -471,7 +472,6 @@ class Subcategory extends React.Component {
 
             if (this.state.ginSelected === false && this.state.rumSelected === false && this.state.tequilaSelected === false &&
                 this.state.scotchSelected === false && this.state.vodkaSelected === false && this.state.blendedSelected === false) {
-                console.log(filteredSet);
                 return filteredSet;
             }
 
@@ -479,7 +479,6 @@ class Subcategory extends React.Component {
                 return finalFilter;
             }
         }
-        console.log(filteredSet);
         return filteredSet;
     }
 

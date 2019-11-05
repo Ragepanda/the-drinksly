@@ -40,7 +40,6 @@ class App extends React.Component {
 
             <Route exact path="/:category/:subcategory" component={Subcategory}/>    
 
-            <Route exact path="/:category/:subcatogry/:supersubcategory" component={Supersubcategory}/>
           </Switch>
         </div>
       </Router>

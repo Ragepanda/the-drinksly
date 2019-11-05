@@ -69,7 +69,6 @@ class Home extends React.Component {
     }
 
     filterDrinks() {
-        console.log(Drinks);
         const drinkSet = Drinks;
             
         var subset = [];
@@ -242,7 +241,6 @@ class Home extends React.Component {
             this.state.scotchToggle === false && this.state.vodkaToggle === false && this.state.whiskeyToggle === false &&
             this.state.shotsToggle === false && this.state.noveltyToggle === false && this.state.holidayToggle === false &&
             this.state.hotToggle === false && this.state.classicToggle === false && this.state.blendedToggle === false) {
-            console.log("ONLY THE SEARCH VALUE IS BEING FILTERED");
             return subset;
         }
 
@@ -251,7 +249,6 @@ class Home extends React.Component {
                 this.state.hotToggle === false && this.state.classicToggle === false && this.state.blendedToggle === false) &&
             (this.state.ginToggle === true || this.state.rumToggle === true || this.state.tequilaToggle === true ||
                 this.state.scotchToggle === true || this.state.vodkaToggle === true || this.state.whiskeyToggle === true)) {
-            console.log("ONLY SPIRITS BEING FILTERED");
             return spiritFilter;
         }
 
@@ -259,14 +256,12 @@ class Home extends React.Component {
             this.state.scotchToggle === false && this.state.vodkaToggle === false && this.state.whiskeyToggle === false) &&
             (this.state.shotsToggle === true || this.state.noveltyToggle === true || this.state.holidayToggle === true ||
                 this.state.hotToggle === true || this.state.classicToggle === true || this.state.blendedToggle === true)) {
-            console.log("ONLY TYPES BEING FILTERED")
             return typeFilter;
         }
 
 
         else {
 
-            console.log("DOUBLE FILTER");
             if (typeFilter.length >= spiritFilter.length) {
                 var doubleFilter = typeFilter.filter(typeObject => {
                     var match = false;
@@ -315,7 +310,6 @@ class Home extends React.Component {
             this.setState({ rumClassname: "button small" })
         }
 
-        console.log(this.state.rumToggle);
     }
 
     ginState(e) {
@@ -330,7 +324,6 @@ class Home extends React.Component {
             this.setState({ ginClassname: "button small" })
         }
 
-        console.log(this.state.ginToggle);
     }
 
     scotchState(e) {
@@ -345,7 +338,6 @@ class Home extends React.Component {
             this.setState({ scotchClassname: "button small" })
         }
 
-        console.log(this.state.scotchToggle);
     }
 
     tequilaState(e) {
@@ -359,8 +351,6 @@ class Home extends React.Component {
             this.setState({ tequilaToggle: false });
             this.setState({ tequilaClassname: "button small" })
         }
-
-        console.log(this.state.tequilaToggle);
     }
 
     vodkaState(e) {
@@ -374,8 +364,6 @@ class Home extends React.Component {
             this.setState({ vodkaToggle: false });
             this.setState({ vodkaClassname: "button small" })
         }
-
-        console.log(this.state.vodkaToggle);
     }
 
     whiskeyState(e) {
@@ -389,8 +377,6 @@ class Home extends React.Component {
             this.setState({ whiskeyToggle: false });
             this.setState({ whiskeyClassname: "button small" })
         }
-
-        console.log(this.state.whiskeyToggle);
     }
 
     blendedState(e) {
@@ -404,8 +390,6 @@ class Home extends React.Component {
             this.setState({ blendedToggle: false });
             this.setState({ blendedClassname: "button small" })
         }
-
-        console.log(this.state.blendedToggle);
     }
 
     classicState(e) {
@@ -419,8 +403,6 @@ class Home extends React.Component {
             this.setState({ classicToggle: false });
             this.setState({ classicClassname: "button small" })
         }
-
-        console.log(this.state.classicToggle);
     }
 
     hotState(e) {
@@ -434,8 +416,6 @@ class Home extends React.Component {
             this.setState({ hotToggle: false });
             this.setState({ hotClassname: "button small" })
         }
-
-        console.log(this.state.hotToggle);
     }
 
     holidayState(e) {
@@ -449,8 +429,6 @@ class Home extends React.Component {
             this.setState({ holidayToggle: false });
             this.setState({ holidayClassname: "button small" })
         }
-
-        console.log(this.state.holidayToggle);
     }
 
     noveltyState(e) {
@@ -464,8 +442,6 @@ class Home extends React.Component {
             this.setState({ noveltyToggle: false });
             this.setState({ noveltyClassname: "button small" })
         }
-
-        console.log(this.state.noveltyToggle);
     }
 
 
@@ -480,8 +456,6 @@ class Home extends React.Component {
             this.setState({ shotsToggle: false });
             this.setState({ shotsClassname: "button small" })
         }
-
-        console.log(this.state.shotsToggle);
     }
 
     searchResultsBox() {
@@ -500,14 +474,6 @@ class Home extends React.Component {
                 {this.createTable()}
             </div>
         )
-    }
-
-
-    componentDidMount() {
-        //console.log(this.state.scotchClassName);
-        //console.log(this.state.tequilaClassName);
-        //let doodoo = this.filterDrinks();
-        //console.log(doodoo[0].name);
     }
 
     createTable() {
@@ -601,9 +567,9 @@ class Home extends React.Component {
                         <div className="container">
                             <div className="row no-collapse-1">
 
-                                <Card route="/drinks/example" image_src="images/alcoholic_drinks/gin_drinks/gin-drinks.jpg" title="Gin Drinks" />
-                                <Card route="/drinks/example" image_src="images/alcoholic_drinks/rum_drinks/rum-drinks.jpg" title="Rum Drinks" />
-                                <Card route="/drinks/example" image_src="images/alcoholic_drinks/scotch_drinks/scotch-drinks.jpg" title="Scotch Drinks" />
+                                <Card route="/drinks/Manhattan" image_src="images/alcoholic_drinks/whiskey_drinks/manhattan.jpg" title="Manhattan" />
+                                <Card route="/drinks/Mojito" image_src="images/alcoholic_drinks/rum_drinks/mojito.jpg" title="Mojito" />
+                                <Card route="/drinks/Godfather" image_src="images/alcoholic_drinks/scotch_drinks/godfather.jpg" title="Godfather" />
 
                             </div>
                         </div>
