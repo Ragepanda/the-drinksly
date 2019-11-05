@@ -34,8 +34,14 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home}/>
 
+            <Route exact path="/home" component = {Home}/>
+
+            <Route exact path="/404.html" component = {Home}/>
+
+            <Route exact path="/drinks" component = {Home}/>
+
             <Route exact path="/:category" component={Category}/>
-             
+            
             <Route exact path="/drinks/:drink" component={Drink}/>         
 
             <Route exact path="/:category/:subcategory" component={Subcategory}/>    

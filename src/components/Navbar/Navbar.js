@@ -20,8 +20,7 @@ class Navbar extends React.Component {
                         <li class="active"><NavLink className="nav-link" to="/">Home</NavLink></li>
                         <li><NavLink className="nav-link" to="/spirits">Drink by Spirit</NavLink></li>
                         <li><NavLink className="nav-link" to="/type">Drink by Type</NavLink></li> 
-                        <li><NavLink className="nav-link" to="/non-alcoholic">Non-Alcoholic Drinks</NavLink></li>
-                        <li><NavLink className="nav-link" to="/Search">Search</NavLink></li>
+                        {/* <li><NavLink className="nav-link" to="/non-alcoholic">Non-Alcoholic Drinks</NavLink></li> */}
                     </ul>
                 </nav>
             </div>

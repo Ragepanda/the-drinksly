@@ -1,5 +1,10 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link
+  } from "react-router-dom";
 import './Card.css';
 
 class Card extends React.Component {
@@ -14,9 +19,9 @@ class Card extends React.Component {
 		return (
 				<div className="4u">
 					<div className="card">
-					<a href={this.props.route} className="image featured imgcard">
+					<Link to={this.props.route} className="image featured imgcard">
                         <img src={this.props.image_src} alt={this.props.title} />
-                    </a>
+                    </Link>
                     <div className="box boxcard">
                         <p>{this.props.title}</p>
                     </div>

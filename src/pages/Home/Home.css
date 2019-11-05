@@ -5,7 +5,7 @@
 img{
     border-radius:25px 25px 0px 0px;     
 }
-#search-box {
+.search-box {
     position: relative;
     background: #130E0D;
     color: white;
@@ -14,15 +14,15 @@ img{
     text-align: center;
 }
 
-#search-box > div > div > section{
+.search-box > div > div > section{
     color:#130E0D
 }
 
-#search-box .card .boxcard{
+.search-box .card .boxcard{
     background-color: #462C1A;
     color: white
 }
-#search-box .card:hover .boxcard{
+.search-box .card:hover .boxcard{
     filter: brightness(180%);
 }
 

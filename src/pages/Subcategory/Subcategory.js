@@ -512,7 +512,7 @@ class Subcategory extends React.Component {
             <div>
             {this.createHelmet()}
             <div className="wrapper style1">
-                <div className="container" id="search-box">
+                <div className="container subcategory-box">
                     <section>
                         <header className="major">
                             <h2>{this.props.match.params.subcategory} Drinks</h2>

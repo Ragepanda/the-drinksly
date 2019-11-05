@@ -47,8 +47,8 @@ class Drink extends React.Component {
                 <div className="major 4u">
                   <img className="drink-img" src={"../../images/alcoholic_drinks/" + info.base_spirit + "_drinks/" + info.img} alt={info.name}/><br />
                   <div className="attribution-box">
-                    <p><a className="attribution" href="#">Title</a></p>
-                    <p><a className="attribution" href="#">Author/Creator</a></p>
+                    <p><a className="attribution" >Title</a></p>
+                    <p><a className="attribution" >Author/Creator</a></p>
                   </div>
                 </div>
                 <div className="major 8u" id="drink-text">

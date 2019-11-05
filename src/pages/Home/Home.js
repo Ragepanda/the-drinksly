@@ -459,17 +459,17 @@ class Home extends React.Component {
     }
 
     searchResultsBox() {
-        if (this.state.searchText === "" &&
-            this.state.ginToggle === false && this.state.rumToggle === false && this.state.tequilaToggle === false &&
-            this.state.scotchToggle === false && this.state.vodkaToggle === false && this.state.whiskeyToggle === false &&
-            this.state.shotsToggle === false && this.state.noveltyToggle === false && this.state.holidayToggle === false &&
-            this.state.hotToggle === false && this.state.classicToggle === false && this.state.blendedToggle === false) {
-            return (<div />);
-        }
+        // if (this.state.searchText === "" &&
+        //     this.state.ginToggle === false && this.state.rumToggle === false && this.state.tequilaToggle === false &&
+        //     this.state.scotchToggle === false && this.state.vodkaToggle === false && this.state.whiskeyToggle === false &&
+        //     this.state.shotsToggle === false && this.state.noveltyToggle === false && this.state.holidayToggle === false &&
+        //     this.state.hotToggle === false && this.state.classicToggle === false && this.state.blendedToggle === false) {
+        //     return (<div />);
+        // }
         return (
             <div>
                 <header className="major" id="home-header">
-                    <h3>Search Results</h3>
+                    <h3>Drinks</h3>
                 </header>
                 {this.createTable()}
             </div>
@@ -506,7 +506,7 @@ class Home extends React.Component {
         return (
             <div>
                 <div className="wrapper style1">
-                    <div className="container" id="search-box">
+                    <div className="container search-box">
                         <section>
                             <header className="major">
                                 <h2>The Drinksly</h2>
