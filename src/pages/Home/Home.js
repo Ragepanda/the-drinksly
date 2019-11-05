@@ -594,7 +594,7 @@ class Home extends React.Component {
                     <div className="container" id="featured-drinks">
                         <header className="major" id="home-header">
                             <h2>Featured Drinks</h2>
-                            <span className="byline">Try some of Drinkskly's most popular searches</span>
+                            <span className="byline">Try some of Drinksly's most popular searches</span>
                         </header>
                     </div>
                     <div id="extra">
@@ -604,6 +604,9 @@ class Home extends React.Component {
                                 <Card route="/drinks/example" image_src="images/alcoholic_drinks/gin_drinks/gin-drinks.jpg" title="Gin Drinks" />
                                 <Card route="/drinks/example" image_src="images/alcoholic_drinks/rum_drinks/rum-drinks.jpg" title="Rum Drinks" />
                                 <Card route="/drinks/example" image_src="images/alcoholic_drinks/scotch_drinks/scotch-drinks.jpg" title="Scotch Drinks" />
+                                <Card route="/drinks/example" image_src="images/alcoholic_drinks/tequila_drinks/tequila-drinks.jpg" title="Tequila Drinks" />
+                                <Card route="/drinks/example" image_src="images/alcoholic_drinks/vodka_drinks/vodka-drinks.jpg" title="Vodka Drinks" />
+                                <Card route="/drinks/example" image_src="images/alcoholic_drinks/whiskey_drinks/whiskey-drinks.jpg" title="Whiskey Drinks" />
 
                             </div>
                         </div>
