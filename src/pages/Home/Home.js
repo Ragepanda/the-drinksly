@@ -560,7 +560,7 @@ class Home extends React.Component {
                     <div className="container" id="featured-drinks">
                         <header className="major" id="home-header">
                             <h2>Featured Drinks</h2>
-                            <span className="byline">Try some of Drinkskly's most popular searches</span>
+                            <span className="byline">Try some of Drinksly's most popular searches</span>
                         </header>
                     </div>
                     <div id="extra">
