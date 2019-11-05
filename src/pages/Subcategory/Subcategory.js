@@ -211,11 +211,11 @@ class Subcategory extends React.Component {
     }
 
     createTable = () => {
-        const drinks = ["Gin", "Rum", "Scotch", "Tequila", "Vodka", "Whiskey"];
-        const types = ["Blended", "Classic", "Hot", "Holiday", "Novelty", "Shots"];
+        const drinks = ["gin", "rum", "scotch", "tequila", "vodka", "whiskey"];
+        const types = ["blended", "classic", "hot", "holiday", "novelty", "shots"];
 
-        const drinkRoute = ["Drinks", "Drinks", "Drinks", "Drinks", "Drinks", "Drinks"];
-        const typeRoute = ["Cocktails", "Cocktails", "Cocktails", "Cocktails", "Cocktails", ""];
+        const drinkRoute = ["drinks", "drinks", "drinks", "drinks", "drinks", "drinks"];
+        const typeRoute = ["cocktails", "cocktails", "cocktails", "cocktails", "cocktails", ""];
 
         var descrip;
         var fillData;
