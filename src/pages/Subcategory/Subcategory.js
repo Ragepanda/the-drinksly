@@ -4,7 +4,7 @@ import Collapsible from "react-collapsible";
 import "./Subcategory.css";
 import { Helmet } from "react-helmet";
 import Drinks from "../Drink/drinkobj.json";
-// import './Subcategory.css';
+import './Subcategory.css';
 class Subcategory extends React.Component {
     constructor(props) {
         super(props); // ✅ We passed props
@@ -510,35 +510,30 @@ class Subcategory extends React.Component {
 
     render() {
         return (
-            <div className="wrapper style1">
+            <div>
             {this.createHelmet()}
-                <div className="container 4u" id="title-box">
+            <div className="wrapper style1">
+                <div className="container" id="search-box">
                     <section>
                         <header className="major">
-                            <h2>{this.props.match.params.subcategory}</h2>
-                            <h3>Narrow your selection below</h3>
-                        </header>
-                    </section>
-                </div>
-                <div id="extra">
+                            <h2>{this.props.match.params.subcategory} Drinks</h2>
                     <div className="container">
                         <div className="row no-collapse-1">
                             {this.createTable()}
                         </div>
                     </div>
+                        </header>
+                    </section>
+                </div>
+                <div id="extra">
 
-                    <div className="container 4u" id="title-box">
-                        <section>
-                            <header className="major">
-                                <h2>{this.props.match.params.category + " selections."}</h2>
-                            </header>
-                        </section>
-                    </div>
+                    <br/>
 
                     <div className="container">
                         {this.createDrinkList()}
                     </div>
                 </div>
+            </div>
             </div>
 
         );

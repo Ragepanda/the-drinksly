@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../../components/Cards/Card.js";
 import { Helmet } from "react-helmet";
+import './Category.css';
 
 class Category extends React.Component {
     constructor(props) {
@@ -71,20 +72,23 @@ class Category extends React.Component {
 
    render() {
         return (
-            <div className="wrapper style1">
+            <div>
             {this.createHelmet()}
-                    <div className="container 4u" id="title-box">
-                        <section>
+            <div className="wrapper style1">
+                <div className="container" id="search-box">
+                    <section>
                             <header className="major">
                                 <h2>{this.props.match.params.category}</h2>
                             </header>
                         </section>
                     </div>
                 <div id="extra">
+                <br/>
                     <div className="container">
                         {this.createTable()}
                     </div>
                 </div>
+            </div>
             </div>
                     
         );
