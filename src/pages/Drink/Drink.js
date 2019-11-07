@@ -2,15 +2,26 @@ import React from "react";
 import './Drink.css';
 import { Helmet } from "react-helmet";
 import Drinks from "../Drink/drinkobj.json";
+import CRInfo from "../Drink/copyright.json"
 // import './Drink.css';
 class Drink extends React.Component {
 
   render() {
     const drink = Drinks;
+    const crInfo = CRInfo;
     var info;
+    //get drink info
     for (var i = 0; i < drink.length; i++) {
       if (this.props.match.params.drink === drink[i].name) {
         info = drink[i];
+        break;
+      }
+    }
+    //get cr info
+    var cr;
+    for (var i = 0; i < crInfo.length; i++) {
+      if (this.props.match.params.drink === crInfo[i].name) {
+        cr = crInfo[i];
         break;
       }
     }
@@ -24,7 +35,7 @@ class Drink extends React.Component {
   );
 
     //console.log("images/alcoholic_drinks/"+info.base_spirit+"_drinks/"+info.img);
-
+    console.log(cr.license);
     return (
       <div>
         <Helmet>
@@ -47,8 +58,8 @@ class Drink extends React.Component {
                 <div className="major 4u">
                   <img className="drink-img" src={"../../images/alcoholic_drinks/" + info.base_spirit + "_drinks/" + info.img} alt={info.name}/><br />
                   <div className="attribution-box">
-                    <p><a className="attribution" >Title</a></p>
-                    <p><a className="attribution" >Author/Creator</a></p>
+                    <p><a className="attribution" >{cr.author}</a></p>
+                    <p><a className="attribution" href={cr.license}>License</a></p>
                   </div>
                 </div>
                 <div className="major 8u" id="drink-text">
