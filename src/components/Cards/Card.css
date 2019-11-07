@@ -1,9 +1,11 @@
 .card {
 	border-radius: 24px 24px 24px 24px;
 	background: rgba(0,0,0,0);
+
 }
 
-.card .imgcard {
+.boxcard p {
+	font-size: 1.2em;
 }
 
 .card:hover .imgcard {
@@ -13,3 +15,31 @@
 .card:hover .boxcard {
 	background-color: #5D4637;
 }
+
+/*
+@media only screen and (min-height: 800px){
+	.rowTime {
+		width: 50%;
+		margin-left: 0%;
+	}
+}
+
+@media only screen and (max-height: 250px){
+	.rowTime {
+		width: 99%;
+		margin-bottom: 50px;
+	}
+	.boxcard p{
+			font-size : 50px;
+	}
+}
+
+@media only screen and (max-height: 150px){
+	.rowTime {
+		width: 99%;
+		margin-bottom: 50px;
+	}
+	.boxcard p{
+			font-size : 50px;
+	}
+}*/

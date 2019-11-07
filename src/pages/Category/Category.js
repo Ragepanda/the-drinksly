@@ -39,10 +39,9 @@ class Category extends React.Component {
 
         let ctr = 0;
         // Outer loop to create parent
-        for (let i = 0; i < fillData.length / 3; i++) {
-            let children = []
+            let children = [];
             //Inner loop to create children
-            for (let j = 0; j < 3; j++) {
+            for (let j = 0; j < fillData.length; j++) {
                 if (descrip[ctr].length > 0) {
                     children.push(<Card
                         route={"/" + this.props.match.params.category + "/" + fillData[ctr]}
@@ -64,8 +63,7 @@ class Category extends React.Component {
                 }
             }
             //Create the parent and add the children
-            table.push(<div className="row no-collapse-1">{children}</div>)
-        }
+            table.push(<section className="rowTime">{children}</section>)
         return table;
     }
 
@@ -91,6 +89,7 @@ class Category extends React.Component {
                         </div>
                     </div>
                 </div>
+
             </div>
 
         );

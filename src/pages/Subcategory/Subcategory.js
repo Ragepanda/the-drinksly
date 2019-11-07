@@ -489,10 +489,9 @@ class Subcategory extends React.Component {
         let ctr = 0;
         const drinkSet = this.filterDrinks();
 
-        for (let i = 0; i < drinkSet.length / 3; i++) {
-            let children = []
+            let children = [];
             //Inner loop to create children
-            for (let j = 0; j < 3; j++) {
+            for (let j = 0; j < drinkSet.length; j++) {
                 if (ctr < drinkSet.length) {
                     children.push(<Card
                         route={"/drinks/" + drinkSet[ctr].name}
@@ -502,8 +501,7 @@ class Subcategory extends React.Component {
                 }
                 ctr++;
             }     //Create the parent and add the children
-            table.push(<div className="row no-collapse-1">{children}</div>)
-        }
+            table.push(<section className="rowTime">{children}</section>)
         return table;
     }
 

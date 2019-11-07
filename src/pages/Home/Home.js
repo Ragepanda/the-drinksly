@@ -482,10 +482,9 @@ class Home extends React.Component {
 
         var ctr = 0;
         // Outer loop to create parent
-        for (var i = 0; i < drinkSet.length / 3; i++) {
             var children = [];
             //Inner loop to create children
-            for (var j = 0; j < 3 && ctr < drinkSet.length; j++) {
+            for (var j = 0; ctr < drinkSet.length; j++) {
                 children.push(<Card
                     route={"/drinks/" + drinkSet[ctr].name}
                     image_src={"../../images/alcoholic_drinks/"+drinkSet[ctr].base_spirit +"_drinks/"+drinkSet[ctr].img}
@@ -496,8 +495,7 @@ class Home extends React.Component {
                 ctr++;
             }
             //Create the parent and add the children
-            table.push(<div className="row no-collapse-1">{children}</div>);
-        }
+            table.push(<section className="rowTime">{children}</section>);
         return table
     }
 
@@ -565,7 +563,7 @@ class Home extends React.Component {
                     </div>
                     <div id="extra">
                         <div className="container">
-                            <div className="row no-collapse-1">
+                            <div className="rowTime">
 
                                 <Card route="/drinks/Manhattan" image_src="images/alcoholic_drinks/whiskey_drinks/manhattan.jpg" title="Manhattan" />
                                 <Card route="/drinks/Mojito" image_src="images/alcoholic_drinks/rum_drinks/mojito.jpg" title="Mojito" />

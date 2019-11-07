@@ -17,7 +17,7 @@ class Card extends React.Component {
 	{
 
 		return (
-				<div className="4u">
+				<div className="rowTime">
 					<div className="card">
 					<Link to={this.props.route} className="image featured imgcard">
                         <img src={this.props.image_src} alt={this.props.title} />
