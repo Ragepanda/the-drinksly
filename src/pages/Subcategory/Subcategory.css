@@ -54,8 +54,8 @@ img{
     background: #462C1A;
 }
 
-.rowTime{
+/* .rowTime{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   grid-gap: 25px;
-}
+} */

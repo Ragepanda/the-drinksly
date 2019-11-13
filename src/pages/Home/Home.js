@@ -495,7 +495,7 @@ class Home extends React.Component {
                 ctr++;
             }
             //Create the parent and add the children
-            table.push(<section className="rowTime">{children}</section>);
+            table.push(<section>{children}</section>);
         return table
     }
 
@@ -563,13 +563,13 @@ class Home extends React.Component {
                     </div>
                     <div id="extra">
                         <div className="container">
-                            <div className="rowTime">
+    
 
                                 <Card route="/drinks/Manhattan" image_src="images/alcoholic_drinks/whiskey_drinks/manhattan.jpg" title="Manhattan" />
                                 <Card route="/drinks/Mojito" image_src="images/alcoholic_drinks/rum_drinks/mojito.jpg" title="Mojito" />
                                 <Card route="/drinks/Godfather" image_src="images/alcoholic_drinks/scotch_drinks/godfather.jpg" title="Godfather" />
 
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

@@ -555,11 +555,13 @@
 		right: 0;
 		top: 0;
 		cursor: default;
+		height: 100%;
 	}
 
 	#nav ul li {
 		display: inline-block;
 		padding: 1.25em 1.25em;
+		height: 65px;
 	}
 
 	#nav ul li a {
@@ -576,6 +578,47 @@
 
 	#nav ul li a:hover {
 		color: #fff;
+	}
+
+
+	@media only screen and (max-width: 600px){
+		#nav{
+			font-size:15px;
+		}
+	}
+
+	@media only screen and (max-width: 600px){
+		#nav{
+			font-size:15px;
+		}
+	}
+
+	@media only screen and (max-width: 520px) and (min-width: 421px){
+		#nav{
+			font-size:12px;
+		}
+
+		#logo{
+			font-size: 15px;
+		}
+
+		.nav-link{
+			margin-top: 5px;
+		}
+	}
+
+	@media only screen and (max-width: 420px){
+		#nav{
+			font-size:8px;
+		}
+
+		#logo{
+			font-size: 12px;
+		}
+
+		.nav-link{
+			margin-top: 10px;
+		}
 	}
 
 /* Banner */

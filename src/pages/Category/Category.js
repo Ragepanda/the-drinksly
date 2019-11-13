@@ -63,7 +63,7 @@ class Category extends React.Component {
                 }
             }
             //Create the parent and add the children
-            table.push(<section className="rowTime">{children}</section>)
+            table.push(<section>{children}</section>)
         return table;
     }
 
@@ -82,7 +82,7 @@ class Category extends React.Component {
                             </header>
                         </section>
                     </div>
-                    <div id="extra">
+                    <div id="extra" className="centered">
                         <br />
                         <div className="container">
                             {this.createTable()}

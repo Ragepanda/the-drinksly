@@ -501,7 +501,7 @@ class Subcategory extends React.Component {
                 }
                 ctr++;
             }     //Create the parent and add the children
-            table.push(<section className="rowTime">{children}</section>)
+            table.push(<section>{children}</section>)
         return table;
     }
 
@@ -522,7 +522,7 @@ class Subcategory extends React.Component {
                         </header>
                     </section>
                 </div>
-                <div id="extra">
+                <div id="extra" className="centered">
 
                     <br/>
 
