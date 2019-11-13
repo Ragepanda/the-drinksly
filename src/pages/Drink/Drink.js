@@ -64,7 +64,7 @@ class Drink extends React.Component {
                 </div>
                 <div className="major 8u" id="drink-text">
                   <div className="row">
-                    <div className="12u">
+                    <div className="12u" id="description-header">
                       <header className="major">
                         <h3>{"What is the " + info.name + " Cocktail?"}</h3>
                       </header>
