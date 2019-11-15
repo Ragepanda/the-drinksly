@@ -12,7 +12,7 @@ class Drink extends React.Component {
     var info;
     //get drink info
     for (var i = 0; i < drink.length; i++) {
-      if (this.props.match.params.drink.replace("_", " ") === drink[i].name) {
+      if (this.props.match.params.drink.replace(/_/g, " ") === drink[i].name) {
         info = drink[i];
         break;
       }
@@ -20,7 +20,7 @@ class Drink extends React.Component {
     //get cr info
     var cr;
     for (var i = 0; i < crInfo.length; i++) {
-      if (this.props.match.params.drink.replace("_", " ") === crInfo[i].name) {
+      if (this.props.match.params.drink.replace(/_/g, " ") === crInfo[i].name) {
         cr = crInfo[i];
         break;
       }
