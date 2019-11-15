@@ -486,7 +486,7 @@ class Home extends React.Component {
             //Inner loop to create children
             for (var j = 0; ctr < drinkSet.length; j++) {
                 children.push(<Card
-                    route={"/drinks/" + drinkSet[ctr].name}
+                    route={"/drinks/" + drinkSet[ctr].name.replace(" ", "_")}
                     image_src={"../../images/alcoholic_drinks/"+drinkSet[ctr].base_spirit +"_drinks/"+drinkSet[ctr].img}
                     title={drinkSet[ctr].name}
                     className="search-card"
