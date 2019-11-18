@@ -469,7 +469,7 @@ class Home extends React.Component {
         return (
             <div>
                 <header className="major" id="home-header">
-                    <h3>Drinks</h3>
+                    <h2>Drinks</h2>
                 </header>
                 {this.createTable()}
             </div>
