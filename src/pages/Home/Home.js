@@ -520,33 +520,33 @@ class Home extends React.Component {
                                     <section className="6u">
                                         <Collapsible trigger="Select By Spirits +" triggerWhenOpen={"Select By Spirits -"}>
 
-                                            <button className={this.state.rumClassname} onClick={this.rumState}>Rum</button>
+                                            <button className={this.state.rumClassname +" buttonTime"} onClick={this.rumState}>Rum</button>
 
-                                            <button className={this.state.ginClassname} onClick={this.ginState}>Gin</button>
+                                            <button className={this.state.ginClassname +" buttonTime"} onClick={this.ginState}>Gin</button>
 
-                                            <button className={this.state.scotchClassname} onClick={this.scotchState}>Scotch</button>
+                                            <button className={this.state.scotchClassname +" buttonTime"} onClick={this.scotchState}>Scotch</button>
 
-                                            <button className={this.state.tequilaClassname} onClick={this.tequilaState}>Tequila</button>
+                                            <button className={this.state.tequilaClassname +" buttonTime"} onClick={this.tequilaState}>Tequila</button>
 
-                                            <button className={this.state.vodkaClassname} onClick={this.vodkaState}>Vodka</button>
+                                            <button className={this.state.vodkaClassname +" buttonTime"} onClick={this.vodkaState}>Vodka</button>
 
-                                            <button className={this.state.whiskeyClassname} onClick={this.whiskeyState}>Whiskey</button>
+                                            <button className={this.state.whiskeyClassname +" buttonTime"} onClick={this.whiskeyState}>Whiskey</button>
                                         </Collapsible>
                                     </section>
                                     <section className="6u">
                                         <Collapsible trigger="Select By Type +" triggerWhenOpen={"Select By Type -"}>
 
-                                            <button className={this.state.blendedClassname} onClick={this.blendedState}>Blended</button>
+                                            <button className={this.state.blendedClassname +" buttonTime"} onClick={this.blendedState}>Blended</button>
 
-                                            <button className={this.state.classicClassname} onClick={this.classicState}>Classic</button>
+                                            <button className={this.state.classicClassname +" buttonTime"} onClick={this.classicState}>Classic</button>
 
-                                            <button className={this.state.hotClassname} onClick={this.hotState}>Hot</button>
+                                            <button className={this.state.hotClassname +" buttonTime"} onClick={this.hotState}>Hot</button>
 
-                                            <button className={this.state.holidayClassname} onClick={this.holidayState}>Holiday</button>
+                                            <button className={this.state.holidayClassname +" buttonTime"} onClick={this.holidayState}>Holiday</button>
 
-                                            <button className={this.state.noveltyClassname} onClick={this.noveltyState}>Novelty</button>
+                                            <button className={this.state.noveltyClassname +" buttonTime"} onClick={this.noveltyState}>Novelty</button>
 
-                                            <button className={this.state.shotsClassname} onClick={this.shotsState}>Shots</button>
+                                            <button className={this.state.shotsClassname +" buttonTime"} onClick={this.shotsState}>Shots</button>
                                         </Collapsible>
                                     </section>
                                 </div>
