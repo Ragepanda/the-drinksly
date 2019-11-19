@@ -73,9 +73,9 @@ class Home extends React.Component {
             
         var subset = [];
         if (this.state.searchText === "")
-            subset = drinkSet;
+            subset = drinkSet.sort((a, b) => a.name.localeCompare(b.name));
         else {
-            var subset = drinkSet.filter((drink) => {
+            var subset = drinkSet.sort((a, b) => a.name.localeCompare(b.name)).filter((drink) => {
                 var reducedName = drink.name.toLowerCase();
                 return reducedName.includes(this.state.searchText.toLowerCase(), 0);
             })
@@ -85,7 +85,7 @@ class Home extends React.Component {
 
         if (this.state.rumToggle === true) {
             var rumFilter = [];
-            rumFilter = subset.filter(drink => {
+            rumFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.base_spirit.toLowerCase().split()[0];
                 var filterString = "rum";
                 return reducedType.includes(filterString, 0);
@@ -98,7 +98,7 @@ class Home extends React.Component {
 
         if (this.state.ginToggle === true) {
             var ginFilter = [];
-            ginFilter = subset.filter(drink => {
+            ginFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.base_spirit.toLowerCase().split()[0];
                 var filterString = "gin";
                 return reducedType.includes(filterString, 0);
@@ -111,7 +111,7 @@ class Home extends React.Component {
 
         if (this.state.scotchToggle === true) {
             var scotchFilter = [];
-            scotchFilter = subset.filter(drink => {
+            scotchFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.base_spirit.toLowerCase().split()[0];
                 var filterString = "scotch";
                 return reducedType.includes(filterString, 0);
@@ -124,7 +124,7 @@ class Home extends React.Component {
 
         if (this.state.tequilaToggle === true) {
             var tequilaFilter = [];
-            tequilaFilter = subset.filter(drink => {
+            tequilaFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.base_spirit.toLowerCase().split()[0];
                 var filterString = "tequila";
                 return reducedType.includes(filterString, 0);
@@ -137,7 +137,7 @@ class Home extends React.Component {
 
         if (this.state.vodkaToggle === true) {
             var vodkaFilter = [];
-            vodkaFilter = subset.filter(drink => {
+            vodkaFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.base_spirit.toLowerCase().split()[0];
                 var filterString = "vodka";
                 return reducedType.includes(filterString, 0);
@@ -150,7 +150,7 @@ class Home extends React.Component {
 
         if (this.state.whiskeyToggle === true) {
             var whiskeyFilter = [];
-            whiskeyFilter = subset.filter(drink => {
+            whiskeyFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.base_spirit.toLowerCase().split()[0];
                 var filterString = "whiskey";
                 return reducedType.includes(filterString, 0);
@@ -162,7 +162,7 @@ class Home extends React.Component {
 
         if (this.state.blendedToggle === true) {
             var blendedFilter = [];
-            blendedFilter = subset.filter(drink => {
+            blendedFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.drink_type.toLowerCase().split()[0];
                 var filterString = "blended";
                 return reducedType.includes(filterString, 0);
@@ -175,7 +175,7 @@ class Home extends React.Component {
 
         if (this.state.classicToggle === true) {
             var classicFilter = [];
-            classicFilter = subset.filter(drink => {
+            classicFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.drink_type.toLowerCase().split()[0];
                 var filterString = "classic";
                 return reducedType.includes(filterString, 0);
@@ -188,7 +188,7 @@ class Home extends React.Component {
 
         if (this.state.hotToggle === true) {
             var hotFilter = [];
-            hotFilter = subset.filter(drink => {
+            hotFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.drink_type.toLowerCase().split()[0];
                 var filterString = "hot";
                 return reducedType === "hot cocktail";
@@ -201,7 +201,7 @@ class Home extends React.Component {
 
         if (this.state.holidayToggle === true) {
             var holidayFilter = [];
-            holidayFilter = subset.filter(drink => {
+            holidayFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.drink_type.toLowerCase().split()[0];
                 var filterString = "holiday";
                 return reducedType.includes(filterString, 0);
@@ -214,7 +214,7 @@ class Home extends React.Component {
 
         if (this.state.noveltyToggle === true) {
             var noveltyFilter = [];
-            noveltyFilter = subset.filter(drink => {
+            noveltyFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.drink_type.toLowerCase().split()[0];
                 var filterString = "novelty";
                 return reducedType.includes(filterString, 0);
@@ -227,7 +227,7 @@ class Home extends React.Component {
 
         if (this.state.shotsToggle === true) {
             var shotsFilter = [];
-            shotsFilter = subset.filter(drink => {
+            shotsFilter = subset.sort((a, b) => a.name.localeCompare(b.name)).filter(drink => {
                 var reducedType = drink.drink_type.toLowerCase().split()[0];
                 var filterString = "shots";
                 return reducedType==="shot";
@@ -241,7 +241,8 @@ class Home extends React.Component {
             this.state.scotchToggle === false && this.state.vodkaToggle === false && this.state.whiskeyToggle === false &&
             this.state.shotsToggle === false && this.state.noveltyToggle === false && this.state.holidayToggle === false &&
             this.state.hotToggle === false && this.state.classicToggle === false && this.state.blendedToggle === false) {
-            return subset;
+            return subset.sort((a, b) => a.name.localeCompare(b.name));
+            
         }
 
         else if (
@@ -249,14 +250,14 @@ class Home extends React.Component {
                 this.state.hotToggle === false && this.state.classicToggle === false && this.state.blendedToggle === false) &&
             (this.state.ginToggle === true || this.state.rumToggle === true || this.state.tequilaToggle === true ||
                 this.state.scotchToggle === true || this.state.vodkaToggle === true || this.state.whiskeyToggle === true)) {
-            return spiritFilter;
+            return spiritFilter.sort((a, b) => a.name.localeCompare(b.name));
         }
 
         else if ((this.state.ginToggle === false && this.state.rumToggle === false && this.state.tequilaToggle === false &&
             this.state.scotchToggle === false && this.state.vodkaToggle === false && this.state.whiskeyToggle === false) &&
             (this.state.shotsToggle === true || this.state.noveltyToggle === true || this.state.holidayToggle === true ||
                 this.state.hotToggle === true || this.state.classicToggle === true || this.state.blendedToggle === true)) {
-            return typeFilter;
+            return typeFilter.sort((a, b) => a.name.localeCompare(b.name));
         }
 
 
@@ -271,7 +272,7 @@ class Home extends React.Component {
                     });
                     return match;
                 })
-                return doubleFilter;
+                return doubleFilter.sort((a, b) => a.name.localeCompare(b.name));
             }
 
             else {
@@ -283,7 +284,7 @@ class Home extends React.Component {
                     });
                     return match;
                 })
-                return doubleFilter;
+                return doubleFilter.sort((a, b) => a.name.localeCompare(b.name));
             }
         }
     }
