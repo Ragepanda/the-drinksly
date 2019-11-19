@@ -37,7 +37,7 @@ class Drink extends React.Component {
     //console.log("images/alcoholic_drinks/"+info.base_spirit+"_drinks/"+info.img);
     console.log(cr.license);
     return (
-      <div>
+    <div>                                                            
         <Helmet>
           <title>{"Drink Recipe" + " | " + info.name + " Drink Recipe"}</title>
           <meta name="description" content={"This Drink Recipe page is perfect to understand and make the " + info.name + " drink recipe. Please enjoy using and drinking our " + info.name + " drink recipe."} />
@@ -47,69 +47,72 @@ class Drink extends React.Component {
           <meta name="rating" content="adults" />
           <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
         </Helmet>
-        <div className="wrapper style1">
-          <div className="container" id="recipe-box">
-            <section>
-              <header className="major center">
-                <h2>{info.name}</h2>
-              </header>
+        <div className="wrapper style1">                             
+        	<div className="container" id="recipe-box">                
+            	<section>
+              		<header className="major center">
+                	<h2>{info.name}</h2>
+              	</header>
 
-              <div className="row">
-                <div className="major 4u">
-                  <img className="drink-img" src={"../../images/alcoholic_drinks/" + info.base_spirit + "_drinks/" + info.img} alt={info.name}/><br />
-                  <div className="attribution-box">
-                    <p><a className="attribution" >{cr.author}</a></p>
-                    <p><a className="attribution" href={cr.license}>License</a></p>
-                  </div>
-                </div>
-                <div className="major 8u" id="drink-text">
-                  <div className="row">
-                    <div className="12u" id="description-header">
-                      <header className="major">
-                        <h3>{"What is the " + info.name + " Cocktail?"}</h3>
-                      </header>
-                      <p>{info.description}</p>
-                    </div>
-                  </div>
-                  <div className="row" id="list-rows">
-                    <div className="6u" id="ingredients-box">
-                      <header className="major">
-                        <h3>{info.name} Ingredients</h3>
-                      </header>
-                      <ul>
-                        {recipe}
-                      </ul>
-                    </div>
+            	<div className="row">
+                	<div className="" id="image-box">
+                		<img className="drink-img" src={"../../images/alcoholic_drinks/" + info.base_spirit + "_drinks/" + info.img} alt={info.name}/><br />
+                 		<div className="attribution-box">
+                    		<p><a className="attribution" >{cr.author}</a></p>
+                    		<p><a className="attribution" href={cr.license}>License</a></p>
+                 		</div>
+                	</div>
 
-                    <div className= "6u" id="steps-box">
-                      <header className="major">
-                        <h3>{info.name} Recipe</h3>
-                      </header>
-                      <ul>
-                        {steps}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                	<div className="" id="drink-text">
+                  		<div className="row">
+                    		<div className="" id="description-header">
+                      			<header className="major">
+                        			<h3>{"What is the " + info.name + " Cocktail?"}</h3>
+                      			</header>
+                      			<p>{info.description}</p>
+                    		</div>
+                		</div>
 
-              {/* <div className="row center">
-                <div className="major 12u">
-                  <header className="major center">
-                    <h3>{info.name} Ingredients</h3>
-                  </header>
-                  <br />
-                  <ul>
-                    {recipe}
-                  </ul>
-                </div>
-              </div> */}
+                		<div className="row" id="list-rows">  
+                    		<div className="" id="ingredients-box">
+                      			<header className="major">
+                        		<h3>{info.name} Ingredients</h3>
+                      			</header>
+                      			<ul>
+                        		{recipe}
+                      			</ul>
+                    		</div>
+
+                    		<div className= "" id="steps-box">
+                      			<header className="major">
+                        		<h3>{info.name} Recipe</h3>
+                      			</header>
+                      			<ul>
+                        		{steps}
+                      			</ul>
+                    		</div>
+                		</div>    
+
+            		</div>
+        		</div>
+
+              	{/* <div className="row center">
+                	<div className="major 12u">
+                  	<header className="major center">
+                    	<h3>{info.name} Ingredients</h3>
+                  	</header>
+                  		<br />
+                  	<ul>
+                    	{recipe}
+                  	</ul>
+                	</div>
+              	</div> */}
 
 
-            </section>
-          </div>
+        		</section>
+    		</div>
         </div>
-      </div>
+     </div>
     );
   }
 };

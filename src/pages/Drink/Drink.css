@@ -2,20 +2,20 @@
 	background: #130E0D;
 	color: white;
 	font-family: 'Raleway', sans-serif;
-	border-radius: 25px
+	border-radius: 25px;
+	padding-bottom: 25px;
 }
 
 #description-header{
-	padding-left:0px;
+	
 }
 
 #steps-box{
-	padding-right:10px;
-	padding-left:15px;
+
 }
 
 #list-rows{
-	margin-left: -60px;
+	
 }
 #title{
 	font-size: 30px;
@@ -23,23 +23,31 @@
 	background-color: black;
 	padding-top: 20px;
 }
-
+#image-box{
+	width: 33%;
+	
+}
+#drink-text{
+	width: 66%;
+	
+}
 .drink-img{
 	width: 100%;
 	height: auto;
 	border-radius: 25px;
 	padding: 10px;
-	padding-left:20px;
+	
 }
 .attribution-box{
 	text-align:center;
 	padding-bottom: 5px;
 }
 .attribution{
-	width:280px;
+    width:280px;
 	text-align: center;
 	color: #C39873;
-	font-size:12px;
+	font-size:10px;
+	padding-top: -15px;
 }
 
 .attribution:hover{
@@ -53,4 +61,15 @@
 
 .padded{
 	padding-right: 100px;
+}
+
+@media (max-width:650px){
+	#image-box{
+		width:100%;
+	}
+	#drink-text{
+		width:100%;
+		margin-left: 5%;
+		padding-right: 5%;
+	}
 }
