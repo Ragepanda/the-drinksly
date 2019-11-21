@@ -504,6 +504,15 @@ class Home extends React.Component {
 
         return (
             <div>
+                <Helmet>
+                  <title>Easy Mixed Drink Recipes | The Drinksly</title>
+                  <meta name="description" content="The Drinksly is the best website for mixed drinks and easy mixed drink recipes. Mixed drinks with vodka and other spirits can be found with the click of a button." />
+                  <meta name="keywords" content="drink, recipe, recipes, cocktail, cocktails, vodka, whiskey, gin, rum, tequila, scotch, non-alcoholic, mixed, spirit, spirits" />
+                  <meta name="author" content="thedrinksly.com" />
+                  <meta http-equiv="Content-Language" content="en-US" />
+                  <meta name="rating" content="adults" />
+                  <meta http-equiv="content-type" content="text/html" charSet="utf-8" />
+                </Helmet>
                 <div className="wrapper style1">
                     <div className="container search-box">
                         <section>
