@@ -11,6 +11,6 @@ This project was built entirely around SEO data on googles most searched alcohol
 
 <img src=drinksly.gif></img>
 
-Check out our live production website at: thedrinksly.com
+Check out our live production website at: http://thedrinksly.com
 
 Check out our [Video Demonstration](https://www.youtube.com/watch?v=2_LgaQ5yVvo&t=8s)
