@@ -1,4 +1,4 @@
-#The Drinksly
+# The Drinksly
 
 The Drinksly is a React/Node front end application that allows users to search for popular alcoholic drink recipes. 
 
