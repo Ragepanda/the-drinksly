@@ -16,7 +16,7 @@ This project was built entirely around SEO data on googles most searched alcohol
 
 **Our Site In Action**
 
- * Check out our live production website at: http://thedrinksly.com
+ * ~~Check out our live production website at: http://thedrinksly.com~~ This website stopped being supported in 2021
 
  * Check out our [Video Demonstration](https://www.youtube.com/watch?v=2_LgaQ5yVvo&t=8s)
 
